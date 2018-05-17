@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Usercategory:</strong>
+  <%= @servingguide.usercategory_id %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @servingguide.age %>
+</p>
+
+<p>
+  <strong>Veg:</strong>
+  <%= @servingguide.veg %>
+</p>
+
+<p>
+  <strong>Fruit:</strong>
+  <%= @servingguide.fruit %>
+</p>
+
+<p>
+  <strong>Grain:</strong>
+  <%= @servingguide.grain %>
+</p>
+
+<p>
+  <strong>Meat:</strong>
+  <%= @servingguide.meat %>
+</p>
+
+<p>
+  <strong>Milk:</strong>
+  <%= @servingguide.milk %>
+</p>
+
+<p>
+  <strong>Additional serve:</strong>
+  <%= @servingguide.additional_serve %>
+</p>
+
+<%= link_to 'Edit', edit_servingguide_path(@servingguide) %> |
+<%= link_to 'Back', servingguides_path %>

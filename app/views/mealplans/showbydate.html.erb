@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Mealplans</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Date</th>
+      <th>Mealtype</th>
+      <th>Veg</th>
+      <th>Fruit</th>
+      <th>Grain</th>
+      <th>Meat</th>
+      <th>Milk</th>
+      <th>Additional serve</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mealplan_showbydate.each do |mealplan| %>
+      <tr>
+        <td><%= mealplan.user_id %></td>
+        <td><%= mealplan.date %></td>
+        <td><%= mealplan.mealtype %></td>
+        <td><%= mealplan.veg %></td>
+        <td><%= mealplan.fruit %></td>
+        <td><%= mealplan.grain %></td>
+        <td><%= mealplan.meat %></td>
+        <td><%= mealplan.milk %></td>
+        <td><%= mealplan.additional_serve %></td>
+        <td><%= link_to 'Show', mealplan %></td>
+        <td><%= link_to 'Edit', edit_mealplan_path(mealplan) %></td>
+        <td><%= link_to 'Destroy', mealplan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mealplan', new_mealplan_path %>

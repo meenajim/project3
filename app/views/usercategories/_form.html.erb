@@ -1,0 +1,28 @@
+<% if @current_user.nil? %>
+    <h2>Restricted to Admins!</h2>
+    <% elsif @current_user.present? && @current_user.user_type == 'Admin' %>
+
+      <%= form_with(model: usercategory, local: true) do |form| %>
+        <% if usercategory.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(usercategory.errors.count, "error") %> prohibited this usercategory from being saved:</h2>
+
+            <ul>
+            <% usercategory.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="field">
+          <%= form.label :category %>
+          <%= form.text_area :category, id: :usercategory_category %>
+        </div>
+
+        <div class="actions">
+          <%= form.submit %>
+        </div>
+      <% end %>
+    <% end %>
+<% end %>

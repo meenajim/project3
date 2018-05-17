@@ -1,0 +1,64 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_area :name, id: :user_name %>
+  </div>
+
+  <!-- <div class="field">
+    <%= form.label :password_digest %>
+    <%= form.text_field :password_digest, id: :user_password_digest %>
+  </div> -->
+
+
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password, id: :user_password, :required =>true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :password_confirmation %>
+    <%= form.password_field :password_confirmation, id: :user_password, :required =>true %>
+  </div>
+
+  <div class="field">
+    <%= form.label :usercategory_id %>
+    <%= form.select :usercategory_id, Usercategory.pluck(:category,:id), {:include_blank => '<----- Select Category ----->' }, :required => true%>
+
+  </div>
+
+  <div class="field">
+    <%= form.label :dob %>
+    <%= form.date_select :dob, id: :user_dob %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_area :email, id: :user_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :family_id %>
+    <%= form.select :family_id, Family.pluck(:name,:id), {:include_blank => '<----- Select FamilyName ----->' }, :required => true%>
+
+  </div>
+
+
+  <%= form.hidden_field(:user_type, {:value => 'user'}) %>
+
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

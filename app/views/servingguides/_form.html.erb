@@ -1,0 +1,62 @@
+<% if @current_user.nil? %>
+    <h2>Restricted to Admins!</h2>
+    <% elsif @current_user.present? && @current_user.user_type == 'admin' %>
+      <%= form_with(model: servingguide, local: true) do |form| %>
+        <% if servingguide.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(servingguide.errors.count, "error") %> prohibited this servingguide from being saved:</h2>
+
+            <ul>
+            <% servingguide.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="field">
+          <%= form.label :usercategory_id %>
+          <%= form.select :usercategory_id, Usercategory.pluck(:category,:id), {:include_blank => '<----- Select Category ----->' }, :required => true%>
+
+        </div>
+
+        <div class="field">
+          <%= form.label :age %>
+          <%= form.number_field :age, id: :servingguide_age %>
+        </div>
+
+        <div class="field">
+          <%= form.label :veg %>
+          <%= form.number_field :veg, id: :servingguide_veg %>
+        </div>
+
+        <div class="field">
+          <%= form.label :fruit %>
+          <%= form.number_field :fruit, id: :servingguide_fruit %>
+        </div>
+
+        <div class="field">
+          <%= form.label :grain %>
+          <%= form.number_field :grain, id: :servingguide_grain %>
+        </div>
+
+        <div class="field">
+          <%= form.label :meat %>
+          <%= form.number_field :meat, id: :servingguide_meat %>
+        </div>
+
+        <div class="field">
+          <%= form.label :milk %>
+          <%= form.number_field :milk, id: :servingguide_milk %>
+        </div>
+
+        <div class="field">
+          <%= form.label :additional_serve %>
+          <%= form.number_field :additional_serve, id: :servingguide_additional_serve %>
+        </div>
+
+        <div class="actions">
+          <%= form.submit %>
+        </div>
+      <% end %>
+    <% end %>

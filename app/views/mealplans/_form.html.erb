@@ -1,0 +1,115 @@
+<!-- <%= form_with(model: mealplan, local: true) do |form| %>
+  <% if mealplan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(mealplan.errors.count, "error") %> prohibited this mealplan from being saved:</h2>
+
+      <ul>
+      <% mealplan.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id, id: :mealplan_user_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :date %>
+    <%= form.date_select :date, id: :mealplan_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :mealtype %>
+    <%= form.text_area :mealtype, id: :mealplan_mealtype %>
+  </div>
+
+  <div class="field">
+    <%= form.label :veg %>
+    <%= form.number_field :veg, id: :mealplan_veg %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fruit %>
+    <%= form.number_field :fruit, id: :mealplan_fruit %>
+  </div>
+
+  <div class="field">
+    <%= form.label :grain %>
+    <%= form.number_field :grain, id: :mealplan_grain %>
+  </div>
+
+  <div class="field">
+    <%= form.label :meat %>
+    <%= form.number_field :meat, id: :mealplan_meat %>
+  </div>
+
+  <div class="field">
+    <%= form.label :milk %>
+    <%= form.number_field :milk, id: :mealplan_milk %>
+  </div>
+
+  <div class="field">
+    <%= form.label :additional_serve %>
+    <%= form.number_field :additional_serve, id: :mealplan_additional_serve %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %> -->
+<%if @current_user.nil?%>
+
+<h2>Please <%= link_to 'Sign in', login_path %></h2>
+
+<% elsif @current_user.present?%>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Mealplans</h1>
+
+<table>
+  <thead>
+    <tr>
+      <!-- <th>User</th> -->
+      <th>Date</th>
+      <th>Mealtype</th>
+      <th>Veg</th>
+      <th>Fruit</th>
+      <th>Grain</th>
+      <th>Meat</th>
+      <th>Milk</th>
+      <th>Additional serve</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mealplans.each do |mealplan| %>
+    <%= fields_for "mealplan[]", mealplan do |mealplan_fields| %>
+
+      <tr>
+        <!-- <td><%= mealplan.user_id %></td> -->
+        <td><%= mealplan.date %></td>
+        <td><%= mealplan.mealtype %></td>
+        <td><%= mealplan_fields.text_field :veg ,size: 3%></td>
+        <td><%= mealplan_fields.text_field :fruit,size: 3 %></td>
+        <td><%= mealplan_fields.text_field :grain,size: 3%></td>
+        <td><%= mealplan_fields.text_field :meat,size: 3 %></td>
+        <td><%= mealplan_fields.text_field :milk,size: 3%></td>
+        <td><%= mealplan_fields.text_field :additional_serve,size: 3 %></td>
+        <td><%= link_to 'Show', mealplan %></td>
+        <td><%= link_to 'Edit', edit_mealplan_path(mealplan) %></td>
+        <td><%= link_to 'Destroy', mealplan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mealplan', new_mealplan_path %>
+<% end %>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project3</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="container">
+      <div>
+        <% if @current_user.present? %>
+        <%= link_to "Sign Out #{@current_user.name}",login_path, :method => 'delete'%>
+        <% else %>
+        <%= link_to 'Sign Up', new_user_path %>
+        <%= link_to 'Sign in',login_path %>
+        <% end %>
+      </div>
+    <header>
+      <nav>
+        <div>
+          <%= link_to 'Home',root_path%>
+          <%= link_to 'UserCategory',usercategories_path%>
+          <%= link_to 'Serving Guide',servingguides_path%>
+          <%= link_to 'MealPlan', mealplans_path%>
+          <%= link_to 'Family', families_path%>
+
+          <%= link_to 'Nutrition Calculator',root_path%>
+
+        </div>
+      </nav>
+
+    </header>
+    <main>
+      <div class="">
+        <%= yield %>
+
+      </div>
+
+    </main>
+  </div>
+<footer>
+
+</footer>
+  </body>
+</html>

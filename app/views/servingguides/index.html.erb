@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Servingguides</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Usercategory</th>
+      <th>Age</th>
+      <th>Veg</th>
+      <th>Fruit</th>
+      <th>Grain</th>
+      <th>Meat</th>
+      <th>Milk</th>
+      <th>Additional serve</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @servingguides.each do |servingguide| %>
+      <tr>
+
+        <td><%= servingguide.usercategory_id %></td>
+        <td><%= servingguide.age %></td>
+        <td><%= servingguide.veg %></td>
+        <td><%= servingguide.fruit %></td>
+        <td><%= servingguide.grain %></td>
+        <td><%= servingguide.meat %></td>
+        <td><%= servingguide.milk %></td>
+        <td><%= servingguide.additional_serve %></td>
+        <td><%= link_to 'Show', servingguide %></td>
+        <td><%= link_to 'Edit', edit_servingguide_path(servingguide) %></td>
+        <td><%= link_to 'Destroy', servingguide, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Servingguide', new_servingguide_path %>

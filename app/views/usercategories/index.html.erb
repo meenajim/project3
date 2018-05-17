@@ -1,0 +1,36 @@
+
+<p id="notice"><%= notice %></p>
+
+<% if @current_user.nil? %>
+    <h2>Restricted to Admins!</h2>
+    <% elsif @current_user.present? && @current_user.user_type == 'Admin' %>
+
+
+        <h1>Usercategories</h1>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @usercategories.each do |usercategory| %>
+              <tr>
+                <td><%= usercategory.category %></td>
+                <td><%= link_to 'Show', usercategory %></td>
+                <td><%= link_to 'Edit', edit_usercategory_path(usercategory) %></td>
+                <td><%= link_to 'Destroy', usercategory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+        <br>
+
+        <%= link_to 'New Usercategory', new_usercategory_path %>
+
+
+<% end %>
