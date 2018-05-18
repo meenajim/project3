@@ -18,7 +18,7 @@ class User < ApplicationRecord
   has_secure_password
   belongs_to :family, :optional => true
   has_many :mealplans
-  belongs_to :usercategories, :optional =>true
+  belongs_to :usercategory, :optional =>true
   validates :email, :presence =>true, :uniqueness =>true
 
 end

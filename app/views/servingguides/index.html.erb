@@ -6,7 +6,7 @@
   <thead>
     <tr>
       <th>Usercategory</th>
-      <th>Age</th>
+      <th>Minimum Age</th>
       <th>Veg</th>
       <th>Fruit</th>
       <th>Grain</th>
@@ -21,7 +21,7 @@
     <% @servingguides.each do |servingguide| %>
       <tr>
 
-        <td><%= servingguide.usercategory_id %></td>
+        <td><%= servingguide.usercategory.category %></td>
         <td><%= servingguide.age %></td>
         <td><%= servingguide.veg %></td>
         <td><%= servingguide.fruit %></td>

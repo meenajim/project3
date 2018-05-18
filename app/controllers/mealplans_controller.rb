@@ -6,13 +6,26 @@ class MealplansController < ApplicationController
   def index
     @mealplans = Mealplan.all
     if @current_user.present?
-  @mealplan_user = Mealplan.where(:user_id => @current_user.id)
-  end
+        @mealplan_user = Mealplan.where(:user_id => @current_user.id)
+    end
+    # @servingguide_test = Servingguide.where(:usercategory_id => @current_user.usercategory_id, :age => Date.today.year - @current_user.dob.year)
+    @servingguide = Servingguide.where("usercategory_id = ? and age < ?",  @current_user.usercategory_id ,Date.today.year - @current_user.dob.year )
+
+
+
   end
 
   # GET /mealplans/1
   # GET /mealplans/1.json
 
+  def update_all
+    params['mealplan'].keys.each do |id|
+      @mealplan = Mealplan.find(id.to_i)
+      @mealplan.update_attributes(mealplan_params(id))
+    end
+  # Mealplan.update_all({veg: 4},{id: params[:id]})
+  redirect_to(mealplans_url)
+  end
 
   def show
     # cant search by date bcos its always by id..so create new def showby date
@@ -29,9 +42,20 @@ class MealplansController < ApplicationController
 
   # GET /mealplans/new
   def new
-    @mealplan = Mealplan.new
+    # @mealplan = Mealplan.new
     # ******************************
-    @mealplans = Mealplan.all
+  if Mealplan.where("user_id = ? and date = ?",  @current_user.id ,Date.today).present?
+      @mealplans = Mealplan.where("user_id = ? and date = ?",  @current_user.id ,Date.today)
+  else
+    Mealplan.create :user_id => @current_user.id, :date => Date.today , :mealtype => 'Breakfast'
+    Mealplan.create :user_id => @current_user.id, :date => Date.today , :mealtype => 'Lunch'
+    Mealplan.create :user_id => @current_user.id, :date => Date.today , :mealtype => 'Snack'
+    Mealplan.create :user_id => @current_user.id, :date => Date.today , :mealtype => 'Dinner'
+    @mealplans = Mealplan.where("user_id = ? and date = ?",  @current_user.id ,Date.today)
+  end
+
+
+
     # ******************************
   end
 
@@ -98,7 +122,13 @@ class MealplansController < ApplicationController
     # end
 
     # Never trust parameters from the scary internet, only allow the white list through.
-    def mealplan_params
-      params.require(:mealplan).permit(:user_id, :date, :mealtype, :veg, :fruit, :grain, :meat, :milk, :additional_serve)
-    end
+    # def mealplan_params
+    #   params.require(:mealplan).permit(:user_id, :date, :mealtype, :veg, :fruit, :grain, :meat, :milk, :additional_serve)
+    # end
+    
+    def mealplan_params(id)
+       params.require(:mealplan).fetch(id).permit(:user_id, :date, :mealtype, :veg, :fruit, :grain, :meat, :milk, :additional_serve)
+
+     end
+
 end

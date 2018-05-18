@@ -9,9 +9,21 @@
 <h1>Mealplans</h1>
 <div id="calendar">
 
-
 <table id="mealplans">
   <thead>
+    <% @servingguide.each do |servingguide| %>
+        <tr>
+          <td>UserCategory-<%= servingguide.usercategory.category%></td>
+          <td>Date</td>
+          <td>Mealtype</td>
+          <td>Veg-<%= servingguide.veg %></td>
+          <td>Fruit-<%= servingguide.fruit %></td>
+          <td>Grain-<%= servingguide.grain %></td>
+          <td>Meat-<%= servingguide.meat %></td>
+          <td>Milk-<%= servingguide.milk %></td>
+          <td>AddlServe-<%= servingguide.additional_serve %></td>
+        </tr>
+      <% end %>
     <tr>
       <th>User</th>
       <th>Date</th>
@@ -27,6 +39,7 @@
   </thead>
 
   <tbody>
+
     <% @mealplans.each do |mealplan| %>
       <tr class="date-<%= mealplan.date %>">
         <td><%= mealplan.user_id %></td>

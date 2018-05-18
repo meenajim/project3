@@ -16,6 +16,7 @@
 #
 
 class Servingguide < ApplicationRecord
- has_many :usercategories
+ belongs_to :usercategory, :optional =>true
+
 
 end

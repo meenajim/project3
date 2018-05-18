@@ -15,11 +15,18 @@ Rails.application.routes.draw do
 
   resources :usercategories
   resources :servingguides
-
+  #*********************this code is not used**********************
+  #this route is given to create a link to the showbydate page which will be
+  #the url of the event on the calendar.
   get '/mealplans/date/:date' => 'mealplans#showbydate', as: :mealplanshowbydate
+  #*****************************************************************
+
+  get '/nutritioncalculator' =>'servingguides#nutrition.html.erb'
+
   resources :mealplans do
-    #this route is given to create a link to the showbydate page which will be
-    #the url of the event on the calendar.
+    collection do
+      put :update_all
+    end
   end
 
   resources :families

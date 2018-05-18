@@ -5,6 +5,7 @@ class ServingguidesController < ApplicationController
   # GET /servingguides.json
   def index
     @servingguides = Servingguide.all
+    
   end
 
   # GET /servingguides/1

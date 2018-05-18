@@ -5,7 +5,12 @@ class FamiliesController < ApplicationController
   # GET /families.json
   def index
     @families = Family.all
+    #*******************************************
+    if @current_user.present?
+    @family_user = User.where(:family_id =>@current_user.family_id )
+    end
 
+    #*******************************************
     # if @current_user.present?
     #   @family_user = Users.where(:family_id => @current_user.family_id)
     # end

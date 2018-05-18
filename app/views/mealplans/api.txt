@@ -1,0 +1,14 @@
+Guess Nutrition by Dish Name GET
+Guess the macro nutrients of a dish given its title.
+
+NUTRIONIX API
+default application created on signup.
+Application ID
+This is the application ID, you should send with each API request.
+
+963251dd
+
+Application Keys
+These are application keys used to authenticate requests.
+
+ad54338feb6dd332aa82fcc67ccd0a53

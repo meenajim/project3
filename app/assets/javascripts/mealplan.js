@@ -1,5 +1,8 @@
 $(document).ready(function () {
+  $('#mealplans tbody tr').hide();
+
   $('#calendar').fullCalendar({
+
    eventClick:function(eventObj) {
         // find the selected
         const date = eventObj.start._i;
@@ -7,6 +10,7 @@ $(document).ready(function () {
         $('#mealplans tbody tr').hide();
         // show the rows for this date
         $('#mealplans tr.date-' + date).show();
+        $
         return false;
          if (eventObj.url)
           {
