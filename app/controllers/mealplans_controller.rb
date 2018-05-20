@@ -33,10 +33,11 @@ class MealplansController < ApplicationController
   end
 
 
-  # def showbydate
-  #   @mealplan_showbydate = Mealplan.where("user_id = ? and date = ?", @current_user.id, params[:date])
-  #
-  # end
+  def showbydate
+    @mealplan_showbydate = Mealplan.where("user_id = ? and date = ?", @current_user.id, params[:date])
+    @servingguide = Servingguide.where("usercategory_id = ? and age < ?",  @current_user.usercategory_id ,Date.today.year - @current_user.dob.year )
+
+  end
 
 
 
@@ -53,9 +54,6 @@ class MealplansController < ApplicationController
     Mealplan.create :user_id => @current_user.id, :date => Date.today , :mealtype => 'Dinner'
     @mealplans = Mealplan.where("user_id = ? and date = ?",  @current_user.id ,Date.today)
   end
-
-
-
     # ******************************
   end
 
@@ -111,8 +109,6 @@ class MealplansController < ApplicationController
     end
   end
 
-
-
   private
     # Use callbacks to share common setup or constraints between actions.
     # def set_mealplan
@@ -125,7 +121,7 @@ class MealplansController < ApplicationController
     # def mealplan_params
     #   params.require(:mealplan).permit(:user_id, :date, :mealtype, :veg, :fruit, :grain, :meat, :milk, :additional_serve)
     # end
-    
+
     def mealplan_params(id)
        params.require(:mealplan).fetch(id).permit(:user_id, :date, :mealtype, :veg, :fruit, :grain, :meat, :milk, :additional_serve)
 

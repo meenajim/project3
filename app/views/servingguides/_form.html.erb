@@ -1,6 +1,4 @@
-<% if @current_user.nil? %>
-    <h2>Restricted to Admins!</h2>
-    <% elsif @current_user.present? && @current_user.user_type == 'Admin' %>
+
       <%= form_with(model: servingguide, local: true) do |form| %>
         <% if servingguide.errors.any? %>
           <div id="error_explanation">
@@ -59,4 +57,3 @@
           <%= form.submit %>
         </div>
       <% end %>
-    <% end %>

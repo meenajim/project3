@@ -15,6 +15,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new user_params
     if @user.save
+#line below will send welcome email to the user
+      UserMailer.welcome(@user).deliver_now
       redirect_to login_path
     else
       render :new
@@ -40,6 +42,11 @@ class UsersController < ApplicationController
     @user = User.find params[:id]
   end
 
+  def activate
+    @user = User.find params[:id]
+    User.where(:id => params[:id]).update(activated: 't') 
+      redirect_to login_path
+  end
 
   private
     def user_params

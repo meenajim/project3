@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'guidelines/index'
+
   get 'pages/home'
 
  get 'session/new'
@@ -21,7 +23,9 @@ Rails.application.routes.draw do
   get '/mealplans/date/:date' => 'mealplans#showbydate', as: :mealplanshowbydate
   #*****************************************************************
 
-  get '/nutritioncalculator' =>'servingguides#nutrition.html.erb'
+  get '/nutritioncalculator' =>'servingguides#nutrition'
+
+  get '/users/:id/activate' => 'users#activate', as: :useractivate
 
   resources :mealplans do
     collection do

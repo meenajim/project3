@@ -2,12 +2,9 @@ document.addEventListener('DOMContentLoaded', function(){
 
   const search = function (e) {
       e.preventDefault();
-    // const apiCall = function(){
       let query = document.getElementById('query').value;
       console.log(query);
-    // postData('https://trackapi.nutritionix.com/v2/natural/nutrients', {
       postData('https://trackapi.nutritionix.com/v2/natural/nutrients?q=query', {
-
         // "query":"for breakfast i ate 2 eggs, bacon, and french toast",
         // "timezone": "US/Eastern"
         "query": query
@@ -28,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function(){
           'x-app-key': 'ad54338feb6dd332aa82fcc67ccd0a53',
           'x-remote-user-id': 0,
           'Content-Type': 'application/json'
-    },
+        },
         method: 'POST', // *GET, POST, PUT, DELETE, etc.
         mode: 'cors', // no-cors, cors, *same-origin
         redirect: 'follow', // manual, *follow, error
@@ -38,15 +35,14 @@ document.addEventListener('DOMContentLoaded', function(){
       .then( data => {
         console.log(data);
         const p = document.createElement('p');
-      document.getElementById('table').style.display = "table";
+        document.getElementById('table').style.display = "table";
         // const tr = document.createElement('tr');
         // const td = document.createElement('td');
         const img = document.getElementById('images');
         // console.log(table);
-
-      // //table.innerHTML='<tr><td><strong>Calories: '+ data.foods[0].nf_calories +'</strong></td></tr><br>';
-      // // table.innerHTML += '<tr><td><strong>Cholesterol: '+ data.foods[0].nf_cholesterol + '</strong></td></tr><br>';
-      // document.body.appendChild(table);
+        //table.innerHTML='<tr><td><strong>Calories: '+ data.foods[0].nf_calories +'</strong></td></tr><br>';
+        // table.innerHTML += '<tr><td><strong>Cholesterol: '+ data.foods[0].nf_cholesterol + '</strong></td></tr><br>';
+        // document.body.appendChild(table);
         img.src = data.foods[0].photo.thumb;
         console.log(data.foods[0].photo.thumb);
         calories.innerHTML = data.foods[0].nf_calories;
@@ -80,7 +76,6 @@ document.addEventListener('DOMContentLoaded', function(){
         // p.innerHTML += '<strong>Serving Unit: '+ data.foods[0].serving_unit + '</strong><br>';
         // p.innerHTML += '<strong>Serving Weight grams: '+ data.foods[0].serving_weight_grams + '</strong><br>';
         // p.innerHTML += '<strong>Source: '+ data.foods[0].source + '</strong><br>';
-
         // document.body.appendChild(p);
 
       })
@@ -89,8 +84,5 @@ document.addEventListener('DOMContentLoaded', function(){
   }
 
   document.getElementById('title-search').addEventListener('submit', search);
-// }
 
-// let data = apiCall()
-// }
-}, false);
+  }, false);
