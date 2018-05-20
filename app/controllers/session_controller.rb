@@ -4,11 +4,11 @@ class SessionController < ApplicationController
 
   def create
     @user = User.find_by :email =>params[:email]
-    if @user.present? && @user.authenticate(params[:password])
+    if @user.present? && @user.authenticate(params[:password]) && @user.activated
       session[:user_id] = @user.id
       redirect_to root_path
     else
-      flash[:error] = "Invalid username or password"
+      flash[:error] = "Invalid username/password or user not activated. Please check your email for activation details."
       redirect_to login_path
     end
   end

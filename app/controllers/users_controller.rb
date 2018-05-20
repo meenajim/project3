@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def index
-    
+
    @users = User.all
 
   end
@@ -48,7 +48,7 @@ class UsersController < ApplicationController
 
   private
     def user_params
-      params.require(:user).permit(:id, :name, :password, :password_confirmation, :usercategory_id, :dob, :email, :family_id,:user_type)
+      params.require(:user).permit(:id, :name, :password, :password_confirmation, :usercategory_id, :dob, :email, :family_id,:user_type,:activated)
 
     end
 
