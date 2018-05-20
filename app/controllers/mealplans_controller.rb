@@ -34,9 +34,10 @@ class MealplansController < ApplicationController
 
 
   def showbydate
+    if @current_user.present?
     @mealplan_showbydate = Mealplan.where("user_id = ? and date = ?", @current_user.id, params[:date])
     @servingguide = Servingguide.where("usercategory_id = ? and age < ?",  @current_user.usercategory_id ,Date.today.year - @current_user.dob.year )
-
+  end
   end
 
 

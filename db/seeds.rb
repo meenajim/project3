@@ -57,12 +57,12 @@ u11 = User.create(:name => 'Manager', :password => 'Manager', :usercategory_id =
 #
 
 Servingguide.destroy_all
-s1 = Servingguide.create(:usercategory_id =>'1', :age =>'50', :veg =>'6',:fruit =>'2',:grain =>'6', :meat =>'3',:milk =>'3',:additional_serve =>'3')
-s2 = Servingguide.create(:usercategory_id =>'1', :age =>'70', :veg =>'6',:fruit =>'2',:grain =>'6', :meat =>'3',:milk =>'3',:additional_serve =>'3')
-s3 = Servingguide.create(:usercategory_id =>'1', :age =>'71', :veg =>'5',:fruit =>'2',:grain =>'5', :meat =>'3',:milk =>'4',:additional_serve =>'3')
-s4 = Servingguide.create(:usercategory_id =>'2', :age =>'50', :veg =>'5',:fruit =>'2',:grain =>'6', :meat =>'3',:milk =>'3',:additional_serve =>'3')
-s5 = Servingguide.create(:usercategory_id =>'2', :age =>'70', :veg =>'5',:fruit =>'2',:grain =>'4', :meat =>'2',:milk =>'4',:additional_serve =>'3')
-s6 = Servingguide.create(:usercategory_id =>'2', :age =>'71', :veg =>'5',:fruit =>'2',:grain =>'3', :meat =>'2',:milk =>'4',:additional_serve =>'2')
+s1 = Servingguide.create(:usercategory_id =>'1', :age =>'19', :veg =>'6',:fruit =>'2',:grain =>'6', :meat =>'3',:milk =>'3',:additional_serve =>'3')
+s2 = Servingguide.create(:usercategory_id =>'1', :age =>'51', :veg =>'6',:fruit =>'2',:grain =>'6', :meat =>'3',:milk =>'3',:additional_serve =>'3')
+s3 = Servingguide.create(:usercategory_id =>'1', :age =>'70', :veg =>'5',:fruit =>'2',:grain =>'5', :meat =>'3',:milk =>'4',:additional_serve =>'3')
+s4 = Servingguide.create(:usercategory_id =>'2', :age =>'19', :veg =>'5',:fruit =>'2',:grain =>'6', :meat =>'3',:milk =>'3',:additional_serve =>'3')
+s5 = Servingguide.create(:usercategory_id =>'2', :age =>'51', :veg =>'5',:fruit =>'2',:grain =>'4', :meat =>'2',:milk =>'4',:additional_serve =>'3')
+s6 = Servingguide.create(:usercategory_id =>'2', :age =>'70', :veg =>'5',:fruit =>'2',:grain =>'3', :meat =>'2',:milk =>'4',:additional_serve =>'2')
 s7 = Servingguide.create(:usercategory_id =>'3', :age =>'0', :veg =>'5',:fruit =>'2',:grain =>'9', :meat =>'4',:milk =>'3',:additional_serve =>'3')
 s8 = Servingguide.create(:usercategory_id =>'4', :age =>'0', :veg =>'8',:fruit =>'2',:grain =>'9', :meat =>'3',:milk =>'3',:additional_serve =>'3')
 s9 = Servingguide.create(:usercategory_id =>'5', :age =>'0', :veg =>'6',:fruit =>'2',:grain =>'7', :meat =>'3',:milk =>'4',:additional_serve =>'5')

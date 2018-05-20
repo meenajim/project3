@@ -26,32 +26,30 @@ $(document).ready(function () {
 
 //begin test code
 //Sum all the veg to update Graph
-var sum = 0;
-// iterate through each td based on class and add the values
-$('#mealplans tr.date-' + date + ' td#Veg').each(function() {
-    var value = $(this).text();
-    // console.log(value);
-    // add only if the value is number
-    if(!isNaN(value) && value.length != 0) {
-        sum += parseFloat(value);
-    }
-    // console.log("Sum is: " + sum);
-});
-
-$("[id*=GraphVeg]").html(sum);
-//need to update the value of the highcharts table
-//which is different from the on-screen table!
-$("#highcharts-data-table").find("tbody tr").eq(1).children().first().html(sum);
-
-//end test code
+// var sum = 0;
+// // iterate through each td based on class and add the values
+// $('#mealplans tr.date-' + date + ' td#Veg').each(function() {
+//     var value = $(this).text();
+//     // console.log(value);
+//     // add only if the value is number
+//     if(!isNaN(value) && value.length != 0) {
+//         sum += parseFloat(value);
+//     }
+//     // console.log("Sum is: " + sum);
+// });
+// $("[id*=GraphVeg]").html(sum);
+// //need to update the value of the highcharts table
+// //which is different from the on-screen table!
+// $("#highcharts-data-table").find("tbody tr").eq(1).children().first().html(sum);
+// //end test code
 
         return false;
 
-         if (eventObj.url)
-          {
-           // window.open(eventObj.url, "_self");
-           // return false; // prevents browser from following link in current tab.
-         }
+         // if (eventObj.url)
+         //  {
+         //   // window.open(eventObj.url, "_self");
+         //   // return false; // prevents browser from following link in current tab.
+         // }
      },
        eventSources: [
         {
@@ -61,13 +59,13 @@ $("#highcharts-data-table").find("tbody tr").eq(1).children().first().html(sum);
   });
 
  $('#container2').highcharts({
-   colors: ['green', 'yellow'],
+   colors: ['lightgreen', 'yellow'],
     data: {
         table: 'mealchart'
     },
     chart: {
         type: 'column',
-        backgroundColor: 'blue'
+        backgroundColor: '#f59b0a4f'
     },
     title: {
         text: 'Recommended v/s Eaten'

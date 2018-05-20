@@ -9,16 +9,16 @@
 <h1>Mealplan of the day</h1>
 <%= form_for :mealplan, :url => update_all_mealplans_path, :html => { :method => :put } do %>
 
-<table>
+<table class="table table-hover">
   <thead>
     <% @servingguide.each do |servingguide| %>
         <tr>
-          <td colspan = "2">Veg</td>
+          <td colspan = "2">Vegetables & legumes/beans</td>
           <td colspan = "2">Fruit</td>
-          <td colspan = "2">Grain</td>
-          <td colspan = "2">Meat</td>
-          <td colspan = "2">Milk</td>
-          <td colspan = "2">AddlServe</td>
+          <td colspan = "2">Grain (cereal) foods, mostly wholegrain</td>
+          <td colspan = "2">Lean meat and poultry, fish, eggs, nuts and seeds, and legumes/beans</td>
+          <td colspan = "2">Milk, yoghurt, cheese and/or alternatives (mostly reduced fat)</td>
+          <td colspan = "2">Approx. number of additional serves from the five food groups or discretionary choices</td>
         </tr>
         <tr>
           <td></td>

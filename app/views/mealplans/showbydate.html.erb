@@ -3,90 +3,96 @@
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
 
+<%if @current_user.nil?%>
 
-<p id="notice"><%= notice %></p>
+<h2>Please <%= link_to 'Sign in', login_path %></h2>
 
-<h1>Mealplans</h1>
+<% elsif @current_user.present?%>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Date</th>
-      <th>Mealtype</th>
-      <th>Veg</th>
-      <th>Fruit</th>
-      <th>Grain</th>
-      <th>Meat</th>
-      <th>Milk</th>
-      <th>Additional serve</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+    <p id="notice"><%= notice %></p>
 
-  <tbody>
-    <% @mealplan_showbydate.each do |mealplan| %>
-      <tr>
-        <td><%= mealplan.user_id %></td>
-        <td><%= mealplan.date %></td>
-        <td><%= mealplan.mealtype %></td>
-        <td><%= mealplan.veg %></td>
-        <td><%= mealplan.fruit %></td>
-        <td><%= mealplan.grain %></td>
-        <td><%= mealplan.meat %></td>
-        <td><%= mealplan.milk %></td>
-        <td><%= mealplan.additional_serve %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+    <h1>Mealplans</h1>
 
-<br>
-<div id="container2" style="width:100%; height:400px;"></div>
+    <table>
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Date</th>
+          <th>Mealtype</th>
+          <th>Veg</th>
+          <th>Fruit</th>
+          <th>Grain</th>
+          <th>Meat</th>
+          <th>Milk</th>
+          <th>Additional serve</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @mealplan_showbydate.each do |mealplan| %>
+          <tr>
+            <td><%= mealplan.user_id %></td>
+            <td><%= mealplan.date %></td>
+            <td><%= mealplan.mealtype %></td>
+            <td><%= mealplan.veg %></td>
+            <td><%= mealplan.fruit %></td>
+            <td><%= mealplan.grain %></td>
+            <td><%= mealplan.meat %></td>
+            <td><%= mealplan.milk %></td>
+            <td><%= mealplan.additional_serve %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+    <br>
+    <div id="container2" style="width:100%; height:400px;"></div>
 
 
 
 
-<table id="mealchart">
-  <thead>
+    <table id="mealchart">
+      <thead>
 
-         <tr>
-             <th></th>
-             <th>Recommended</th>
-             <th>Eaten</th>
-         </tr>
-     </thead>
-     <tbody>
-         <tr>
-             <th>Vegetables</th>
-             <td id = "ServingVeg"><%= @servingguide.first.veg %></td>
-             <td id = "GraphVeg"><%= @mealplan_showbydate.sum(:veg) %></td>
-         </tr>
-         <tr>
-             <th>Fruit</th>
-             <td><%= @servingguide.first.fruit %></td>
-             <td id = "GraphFruit"><%= @mealplan_showbydate.sum(:fruit) %></td>
-         </tr>
-         <tr>
-             <th>Grain</th>
-             <td><%= @servingguide.first.grain %></td>
-             <td id = "GraphGrain"><%= @mealplan_showbydate.sum(:grain) %></td>
-         </tr>
-         <tr>
-             <th>Meat</th>
-             <td><%= @servingguide.first.meat %></td>
-             <td id = "GraphMeat"><%= @mealplan_showbydate.sum(:meat) %></td>
-         </tr>
-         <tr>
-             <th>Milk</th>
-             <td><%= @servingguide.first.milk %></td>
-             <td id = "GraphMilk"><%= @mealplan_showbydate.sum(:milk) %></td>
-         </tr>
-         <tr>
-             <th>AddlServe</th>
-             <td><%= @servingguide.first.additional_serve %></td>
-             <td id = "GraphAddlServe"><%= @mealplan_showbydate.sum(:additional_serve) %></td>
-         </tr>
-     </tbody>
+             <tr>
+                 <th></th>
+                 <th>Recommended</th>
+                 <th>Eaten</th>
+             </tr>
+         </thead>
+         <tbody>
+             <tr>
+                 <th>Vegetables</th>
+                 <td id = "ServingVeg"><%= @servingguide.first.veg %></td>
+                 <td id = "GraphVeg"><%= @mealplan_showbydate.sum(:veg) %></td>
+             </tr>
+             <tr>
+                 <th>Fruit</th>
+                 <td><%= @servingguide.first.fruit %></td>
+                 <td id = "GraphFruit"><%= @mealplan_showbydate.sum(:fruit) %></td>
+             </tr>
+             <tr>
+                 <th>Grain</th>
+                 <td><%= @servingguide.first.grain %></td>
+                 <td id = "GraphGrain"><%= @mealplan_showbydate.sum(:grain) %></td>
+             </tr>
+             <tr>
+                 <th>Meat</th>
+                 <td><%= @servingguide.first.meat %></td>
+                 <td id = "GraphMeat"><%= @mealplan_showbydate.sum(:meat) %></td>
+             </tr>
+             <tr>
+                 <th>Milk</th>
+                 <td><%= @servingguide.first.milk %></td>
+                 <td id = "GraphMilk"><%= @mealplan_showbydate.sum(:milk) %></td>
+             </tr>
+             <tr>
+                 <th>AddlServe</th>
+                 <td><%= @servingguide.first.additional_serve %></td>
+                 <td id = "GraphAddlServe"><%= @mealplan_showbydate.sum(:additional_serve) %></td>
+             </tr>
+         </tbody>
 
-  </table>
+      </table>
+<% end %>

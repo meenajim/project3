@@ -1,8 +1,8 @@
-<script src="https://code.highcharts.com/highcharts.js"></script>
+<!-- <script src="https://code.highcharts.com/highcharts.js"></script>
 <script src="https://code.highcharts.com/modules/data.js"></script>
 <script src="https://code.highcharts.com/modules/exporting.js"></script>
 <script src="https://code.highcharts.com/modules/export-data.js"></script>
-
+ -->
 
 
 <%if @current_user.nil?%>
@@ -55,7 +55,7 @@
         </tr>
     </thead>
     <tbody>
-      <% @mealplans.each do |mealplan| %>
+      <% @mealplan_user.each do |mealplan| %>
         <tr class="date-<%= mealplan.date %>">
           <td><%= mealplan.user_id %></td>
           <td><%= mealplan.date %></td>
