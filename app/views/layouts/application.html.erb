@@ -21,15 +21,26 @@
     <header>
       <nav>
         <div>
+          <%if @current_user.present? && @current_user.user_type == 'admin' %>
           <%= link_to 'Home',root_path%>
           <%= link_to 'UserCategory',usercategories_path%>
           <%= link_to 'Serving Guide',servingguides_path%>
           <%= link_to 'MealPlan', mealplans_path%>
           <%= link_to 'Family', families_path%>
           <%= link_to 'Guidelines', guidelines_index_path %>
+          <%= link_to 'Nutrition Finder',nutritioncalculator_path%>
 
-          <%= link_to 'Nutrition Calculator',nutritioncalculator_path%>
-
+          <% else %>
+          <%= link_to 'Home',root_path%>
+          <%= link_to 'Serving Guide',servingguides_path%>
+          <%= link_to 'MealPlan', mealplans_path%>
+          <%= link_to 'Family', families_path%>
+          <%= link_to 'Guidelines', guidelines_index_path %>
+          <%= link_to 'Nutrition Finder',nutritioncalculator_path%>
+          <% end %>
+          <% if @current_user.present? %>
+          <%= link_to 'Edit Profile',edit_user_path(@current_user.id) %>
+          <% end %>
         </div>
       </nav>
 

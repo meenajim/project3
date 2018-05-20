@@ -39,4 +39,7 @@
 
 <br>
 
+<%if @current_user.present? && @current_user.user_type == 'Admin'%>
+
 <%= link_to 'New Servingguide', new_servingguide_path %>
+<% end %>

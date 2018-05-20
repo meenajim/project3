@@ -1,9 +1,11 @@
 document.addEventListener('DOMContentLoaded', function(){
 
   const search = function (e) {
+
       e.preventDefault();
       let query = document.getElementById('query').value;
-      console.log(query);
+      // console.log(query);
+      if(query!='Enter any food') {
       postData('https://trackapi.nutritionix.com/v2/natural/nutrients?q=query', {
         // "query":"for breakfast i ate 2 eggs, bacon, and french toast",
         // "timezone": "US/Eastern"
@@ -39,13 +41,15 @@ document.addEventListener('DOMContentLoaded', function(){
         // const tr = document.createElement('tr');
         // const td = document.createElement('td');
         const img = document.getElementById('images');
+
         // console.log(table);
         //table.innerHTML='<tr><td><strong>Calories: '+ data.foods[0].nf_calories +'</strong></td></tr><br>';
         // table.innerHTML += '<tr><td><strong>Cholesterol: '+ data.foods[0].nf_cholesterol + '</strong></td></tr><br>';
         // document.body.appendChild(table);
         img.src = data.foods[0].photo.thumb;
         console.log(data.foods[0].photo.thumb);
-        calories.innerHTML = data.foods[0].nf_calories;
+        calories1.innerHTML = data.foods[0].nf_calories;
+        calories2.innerHTML = data.foods[0].nf_calories;
         cholesterol.innerHTML = data.foods[0].nf_cholesterol;
         dietaryfiber.innerHTML = data.foods[0].nf_dietary_fiber;
         potassium.innerHTML = data.foods[0].nf_potassium;
@@ -56,6 +60,8 @@ document.addEventListener('DOMContentLoaded', function(){
         totcarbohydrates.innerHTML = data.foods[0].nf_total_carbohydrate;
         totfat.innerHTML= data.foods[0].nf_total_fat;
 
+        food.innerHTML = data.foods[0].food_name;
+        img.src = data.foods[0].photo.thumb;
 
         servingquantity.innerHTML= data.foods[0].serving_qty;
         servingunit.innerHTML = data.foods[0].serving_unit;
@@ -78,9 +84,9 @@ document.addEventListener('DOMContentLoaded', function(){
         // p.innerHTML += '<strong>Source: '+ data.foods[0].source + '</strong><br>';
         // document.body.appendChild(p);
 
-      })
+        })
+      }
     }
-
   }
 
   document.getElementById('title-search').addEventListener('submit', search);

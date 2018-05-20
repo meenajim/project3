@@ -5,8 +5,4 @@ json.array! @mealplan_user  do |mealplan|
   json.title mealplan.mealtype
   json.start mealplan.date
   # json.url "http://localhost:3000/mealplans/"
-
-  # & mealplan.date
-
-
 end

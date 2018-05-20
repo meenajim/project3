@@ -1,72 +1,83 @@
-<h1>Nutrition Calculator</h1>
 
 <form id = "title-search">
-  <h1>Search for a food and will give you back the nutrients</h1>
-  <input type="search" id="query" name="book-title" value = "1 strawberry">
-  <button id="search">Search</button>
+  <h1>Find Nutrition facts for your food</h1>
+  <input type="search" id="query" name="food" value = "Enter any food">
+  <button id="search">Search</button><br><br><br>
   <table id = "table" class = "display">
     <tr>
-      <td><img src = "" id = "images"></td>
+      <td colspan = "5"><h2>Nutrition Facts</h2></td>
+    </tr>
+    <tr>
+      <td colspan ="5"><img src = "" id = "images"></td>
     </tr>
     <tr>
       <td>Calories</td>
-      <td id ="calories"></td>
-    </tr>
-    <tr>
-      <td>Cholesterol</td>
-      <td id = "cholesterol"></td>
-    </tr>
-    <tr>
-      <td>Dietary Fiber</td>
-      <td id = "dietaryfiber"></td>
-    </tr>
-    <tr>
-      <td>Potassium</td>
-      <td id ="potassium"></td>
-    </tr>
-    <tr>
-      <td>Protein</td>
-      <td id = "protein"></td>
-    </tr>
-    <tr>
-      <td>Saturated Fat</td>
-      <td id = "saturatedfat"></td>
-    </tr>
-
-    <tr>
-      <td>Sodium</td>
-      <td id = "sodium"></td>
-    </tr>
-    <tr>
-      <td>Sugars</td>
-      <td id = "sugars"></td>
-    </tr>
-    <tr>
-      <td>Total Carbohydrates</td>
-      <td id = "totcarbohydrates"></td>
+      <td id ="calories1" colspan="4"></td>
     </tr>
     <tr>
       <td>Total Fat</td>
-      <td id = "totfat"></td>
+      <td id = "totfat" colspan="4"></td>
+    </tr>
+    <tr>
+      <td>Saturated Fat</td>
+      <td id = "saturatedfat" colspan="4"></td>
+    </tr>
+    <tr>
+      <td>Cholesterol</td>
+      <td id = "cholesterol" colspan="4"></td>
+    </tr>
+    <tr>
+      <td>Sodium</td>
+      <td id = "sodium" colspan="4"></td>
+    </tr>
+    <tr>
+      <td>Potassium</td>
+      <td id ="potassium" colspan="4"></td>
+    </tr>
+    <tr>
+      <td>Total Carbohydrates</td>
+      <td id = "totcarbohydrates" colspan="4"></td>
     </tr>
 
-  </table>
-  <table id = "table" class = "display">
-     <tr>
-      <td>Serving Quantity</td>
+    <tr>
+      <td>Dietary Fiber</td>
+      <td id = "dietaryfiber" colspan="4"></td>
+    </tr>
+    <tr>
+      <td>Sugars</td>
+      <td id = "sugars" colspan="4"></td>
+    </tr>
+    <tr>
+      <td>Protein</td>
+      <td id = "protein" colspan="4"></td>
+    </tr>
+    <tr>
+      <td colspan="5"></td>
+    </tr>
+    <tr>
+     <td colspan="5"></td>
+    </tr>
+    <tr>
+      <td colspan="5">Serving Details</td>
+    </tr>
+    <tr>
+      <td>Food</td>
+
+      <td>Quantity</td>
+      <td>Unit</td>
+      <td>Calories</td>
+      <td>Weight</td>
+      <!-- <td>Source</td> -->
+    </tr>
+    <tr>
+
+      <td id = "food"></td>
+
       <td id = "servingquantity" ></td>
-    </tr>
-    <tr>
-      <td>Serving Unit</td>
       <td id = "servingunit"></td>
-    </tr>
-    <tr>
-      <td>Serving Weight Grams</td>
+      <td id ="calories2"></td>
       <td id = "servingweightgram"></td>
-    </tr>
-    <tr>
-      <td>Source</td>
-      <td id = "source"></td>
+      <!-- <td id = "source"></td> -->
     </tr>
   </table>
 </form>

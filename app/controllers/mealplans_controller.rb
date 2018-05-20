@@ -19,6 +19,7 @@ class MealplansController < ApplicationController
   # GET /mealplans/1.json
 
   def update_all
+
     params['mealplan'].keys.each do |id|
       @mealplan = Mealplan.find(id.to_i)
       @mealplan.update_attributes(mealplan_params(id))
@@ -45,6 +46,8 @@ class MealplansController < ApplicationController
   def new
     # @mealplan = Mealplan.new
     # ******************************
+    @servingguide = Servingguide.where("usercategory_id = ? and age < ?",  @current_user.usercategory_id ,Date.today.year - @current_user.dob.year )
+
   if Mealplan.where("user_id = ? and date = ?",  @current_user.id ,Date.today).present?
       @mealplans = Mealplan.where("user_id = ? and date = ?",  @current_user.id ,Date.today)
   else

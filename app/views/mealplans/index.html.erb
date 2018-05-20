@@ -14,6 +14,8 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Mealplans</h1>
+<h2><%= link_to 'Todays Mealplan', new_mealplan_path %></h2>
+
 <div id="calendar">
 </div>
 <table id="mealplans">
@@ -58,71 +60,15 @@
           <td><%= mealplan.user_id %></td>
           <td><%= mealplan.date %></td>
           <td><%= mealplan.mealtype %></td>
-          <td id="Veg"><%= mealplan.veg %></td>
+          <td><%= mealplan.veg %></td>
           <td><%= mealplan.fruit %></td>
           <td><%= mealplan.grain %></td>
           <td><%= mealplan.meat %></td>
           <td><%= mealplan.milk %></td>
           <td><%= mealplan.additional_serve %></td>
           <td><%= link_to 'View Graph', mealplanshowbydate_path(mealplan.date)%></td>
-  <!--
-          <td><%= link_to 'Edit', edit_mealplan_path(mealplan) %></td>
-          <td><%= link_to 'Destroy', mealplan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr> -->
       <% end %>
 
     </tbody>
 </table>
-
-
-
-
-<!-- <table id="mealchart">
-  <thead>
-
-         <tr>
-             <th></th>
-             <th>Recommended</th>
-             <th>Eaten</th>
-         </tr>
-     </thead>
-     <tbody>
-         <tr>
-             <th>Vegetables</th>
-             <td id = "ServingVeg"><%= @servingguide.first.veg %></td>
-             <td id = "GraphVeg"><%= @mealplans.sum(:veg) %></td>
-         </tr>
-         <tr>
-             <th>Fruit</th>
-             <td><%= @servingguide.first.fruit %></td>
-             <td id = "GraphFruit"><%= @mealplans.sum(:fruit) %></td>
-         </tr>
-         <tr>
-             <th>Grain</th>
-             <td><%= @servingguide.first.grain %></td>
-             <td id = "GraphGrain"><%= @mealplans.sum(:grain) %></td>
-         </tr>
-         <tr>
-             <th>Meat</th>
-             <td><%= @servingguide.first.meat %></td>
-             <td id = "GraphMeat"><%= @mealplans.sum(:meat) %></td>
-         </tr>
-         <tr>
-             <th>Milk</th>
-             <td><%= @servingguide.first.milk %></td>
-             <td id = "GraphMilk"><%= @mealplans.sum(:milk) %></td>
-         </tr>
-         <tr>
-             <th>AddlServe</th>
-             <td><%= @servingguide.first.additional_serve %></td>
-             <td id = "GraphAddlServe"><%= @mealplans.sum(:additional_serve) %></td>
-         </tr>
-     </tbody>
-
-  </table>
-
-
-<br> -->
-<%= link_to 'Todays Mealplan', new_mealplan_path %>
 <% end %>
-<!-- <div id="container2" style="width:100%; height:400px;"></div> -->

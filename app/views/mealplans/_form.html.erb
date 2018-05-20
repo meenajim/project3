@@ -6,13 +6,34 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>Mealplans</h1>
+<h1>Mealplan of the day</h1>
 <%= form_for :mealplan, :url => update_all_mealplans_path, :html => { :method => :put } do %>
 
 <table>
   <thead>
+    <% @servingguide.each do |servingguide| %>
+        <tr>
+          <td colspan = "2">Veg</td>
+          <td colspan = "2">Fruit</td>
+          <td colspan = "2">Grain</td>
+          <td colspan = "2">Meat</td>
+          <td colspan = "2">Milk</td>
+          <td colspan = "2">AddlServe</td>
+        </tr>
+        <tr>
+          <td></td>
+        </tr>
+        <tr>
+          <td colspan = "2"><%= servingguide.veg %></td>
+          <td id="Fruit" colspan = "2"><%= servingguide.fruit %></td>
+          <td id="Grain" colspan = "2"><%= servingguide.grain %></td>
+          <td id="Meat" colspan = "2"><%= servingguide.meat %></td>
+          <td id="Milk" colspan = "2"><%= servingguide.milk %></td>
+          <td id="AddlServe" colspan = "2"><%= servingguide.additional_serve %></td>
+        </tr>
+      <% end %>
+
     <tr>
-      <!-- <th>User</th> -->
       <th>Date</th>
       <th>Mealtype</th>
       <th>Veg</th>
@@ -30,7 +51,6 @@
       <%= fields_for "mealplan[]", mealplan do |mealplan_fields| %>
 
         <tr>
-          <!-- <td><%= mealplan.user_id %></td> -->
           <td><%= mealplan.date %></td>
           <td><%= mealplan.mealtype %></td>
           <td><%= mealplan_fields.text_field :veg ,size: 3%></td>
@@ -39,9 +59,9 @@
           <td><%= mealplan_fields.text_field :meat,size: 3 %></td>
           <td><%= mealplan_fields.text_field :milk,size: 3%></td>
           <td><%= mealplan_fields.text_field :additional_serve,size: 3 %></td>
-          <td><%= link_to 'Show', mealplan %></td>
+          <!-- <td><%= link_to 'Show', mealplan %></td>
           <td><%= link_to 'Edit', edit_mealplan_path(mealplan) %></td>
-          <td><%= link_to 'Destroy', mealplan, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Destroy', mealplan, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
         </tr>
       <% end %>
     <% end %>
@@ -54,5 +74,4 @@
   <% end %>
 <br>
 
-<%= link_to 'New Mealplan', new_mealplan_path %>
 <% end %>

@@ -8,11 +8,11 @@
 
 <p>
   <strong>Usercategory:</strong>
-  <%= @user.usercategory_id %>
+  <%= @user.usercategory.category %>
 </p>
 
 <p>
-  <strong>Dob:</strong>
+  <strong>Date of birth:</strong>
   <%= @user.dob %>
 </p>
 
@@ -23,8 +23,8 @@
 
 <p>
   <strong>Family:</strong>
-  <%= @user.family_id %>
+  <%= @user.family.name%>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to 'Edit', edit_user_path(@user) %>
+<!-- <%= link_to 'Back', users_path %> -->

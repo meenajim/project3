@@ -7,8 +7,8 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>Families</h1>
-
+<h1>My Family</h1>
+<% if @families.present? %>
 <table>
   <thead>
     <tr>
@@ -24,16 +24,21 @@
       <tr>
         <td><%= family.name %></td>
         <td><%= family.address %></td>
-        <td><%= link_to 'Show', family %></td>
+        <!-- <td><%= link_to 'Show', family %></td> -->
         <td><%= link_to 'Edit', edit_family_path(family) %></td>
-        <td><%= link_to 'Destroy', family, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!-- <td><%= link_to 'Destroy', family, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>
-<%= link_to 'Family Members',new_family_path%>
 </table>
+<% else %>
+<h4>Please <%= link_to 'click here',edit_user_path(@current_user.id) %> to join/create a family</h4>
+<% end %>
 <table>
   <% @family_user.each do |user| %>
+  <tr>
+    <td><h3>Family Members</h3></td>
+  </tr>
   <tr>
     <td><%= user.name %></td>
 
@@ -42,6 +47,28 @@
   <% end %>
 </table>
 <br>
-
-<%= link_to 'New Family', new_family_path %>
 <% end %>
+
+
+<!-- Family Members Mealplans-->
+<p id="notice"><%= notice %></p>
+
+<table id="familymealplan">
+    <tbody>
+      <% @mealplans_family.each do |mealplan1| %>
+        <tr class="date-<%= mealplan1.date %>">
+          <td><%= mealplan1.user.name %></td>
+          <td><%= mealplan1.date %></td>
+          <td><%= mealplan1.mealtype %></td>
+          <td id="Veg"><%= mealplan1.veg %></td>
+          <td><%= mealplan1.fruit %></td>
+          <td><%= mealplan1.grain %></td>
+          <td><%= mealplan1.meat %></td>
+          <td><%= mealplan1.milk %></td>
+          <td><%= mealplan1.additional_serve %></td>
+          <td><%= link_to 'View Graph', mealplanshowbydate_path(mealplan1.date)%></td>
+
+      <% end %>
+
+    </tbody>
+</table>

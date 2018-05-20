@@ -1,10 +1,8 @@
 class UsersController < ApplicationController
 
   def index
+    
    @users = User.all
-   if @current_user.present?
-       @rental_user = User.where(:id => @current_user.id)
-   end
 
   end
 
@@ -44,7 +42,7 @@ class UsersController < ApplicationController
 
   def activate
     @user = User.find params[:id]
-    User.where(:id => params[:id]).update(activated: 't') 
+    User.where(:id => params[:id]).update(activated: 't')
       redirect_to login_path
   end
 
