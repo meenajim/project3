@@ -4,13 +4,12 @@ class MealplansController < ApplicationController
   # GET /mealplans
   # GET /mealplans.json
   def index
-    @mealplans = Mealplan.all
     if @current_user.present?
+    @mealplans = Mealplan.all
         @mealplan_user = Mealplan.where(:user_id => @current_user.id)
-    end
     # @servingguide_test = Servingguide.where(:usercategory_id => @current_user.usercategory_id, :age => Date.today.year - @current_user.dob.year)
     @servingguide = Servingguide.where("usercategory_id = ? and age < ?",  @current_user.usercategory_id ,Date.today.year - @current_user.dob.year )
-
+  end
 
 
   end

@@ -61,11 +61,13 @@ $("#highcharts-data-table").find("tbody tr").eq(1).children().first().html(sum);
   });
 
  $('#container2').highcharts({
+   colors: ['green', 'yellow'],
     data: {
         table: 'mealchart'
     },
     chart: {
-        type: 'column'
+        type: 'column',
+        backgroundColor: 'blue'
     },
     title: {
         text: 'Recommended v/s Eaten'
@@ -79,6 +81,7 @@ $("#highcharts-data-table").find("tbody tr").eq(1).children().first().html(sum);
         title: {
             text: 'No. of Serves'
         }
+
     },
 
     tooltip: {
