@@ -17,6 +17,4 @@
 
 class Servingguide < ApplicationRecord
  belongs_to :usercategory, :optional =>true
-
-
 end
