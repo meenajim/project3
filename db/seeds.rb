@@ -85,33 +85,33 @@ s10 = Servingguide.create(:age =>'0', :veg =>'5',:fruit =>'2',:grain =>'7', :mea
 #
 
 Mealplan.destroy_all
-m1 = Mealplan.create(:date => '10-05-2018', :user_id => '3',:mealtype => 'Breakfast', :veg => '1', :fruit =>'2', :grain =>'1',:meat =>'1', :milk =>'1', :additional_serve =>'')
-m2 = Mealplan.create(:date => '10-05-2018', :user_id => '3',:mealtype => 'Lunch', :veg => '1', :fruit =>'', :grain =>'',:meat =>'', :milk =>'', :additional_serve =>'')
-m3 = Mealplan.create(:date => '10-05-2018', :user_id => '3',:mealtype => 'Snack', :veg => '', :fruit =>'', :grain =>'',:meat =>'', :milk =>'', :additional_serve =>'1')
-m4 = Mealplan.create(:date => '10-05-2018', :user_id => '3',:mealtype => 'Dinner', :veg => '', :fruit =>'1', :grain =>'1',:meat =>'2', :milk =>'', :additional_serve =>'')
-m5 = Mealplan.create(:date => '11-05-2018', :user_id => '3',:mealtype => 'Breakfast', :veg => '', :fruit =>'1', :grain =>'',:meat =>'', :milk =>'1', :additional_serve =>'')
-m6 = Mealplan.create(:date => '11-05-2018', :user_id => '3',:mealtype => 'Lunch', :veg => '', :fruit =>'', :grain =>'1',:meat =>'2', :milk =>'', :additional_serve =>'')
-m7 = Mealplan.create(:date => '12-05-2018', :user_id => '3',:mealtype => 'Breakfast', :veg => '', :fruit =>'', :grain =>'',:meat =>'', :milk =>'1', :additional_serve =>'')
-m8 = Mealplan.create(:date => '12-05-2018', :user_id => '3',:mealtype => 'Lunch', :veg => '1', :fruit =>'1', :grain =>'',:meat =>'2', :milk =>'', :additional_serve =>'')
-m9 = Mealplan.create(:date => '12-05-2018', :user_id => '3',:mealtype => 'Dinner', :veg => '1', :fruit =>'', :grain =>'1',:meat =>'2', :milk =>'', :additional_serve =>'2')
-m10 = Mealplan.create(:date => '10-05-2018', :user_id => '4',:mealtype => 'Breakfast', :veg => '1', :fruit =>'2', :grain =>'1',:meat =>'1', :milk =>'1', :additional_serve =>'')
-m11 = Mealplan.create(:date => '10-05-2018', :user_id => '4',:mealtype => 'Lunch', :veg => '1', :fruit =>'', :grain =>'',:meat =>'', :milk =>'', :additional_serve =>'')
-m12 = Mealplan.create(:date => '10-05-2018', :user_id => '4',:mealtype => 'Snack', :veg => '', :fruit =>'', :grain =>'',:meat =>'', :milk =>'', :additional_serve =>'1')
-m13 = Mealplan.create(:date => '10-05-2018', :user_id => '4',:mealtype => 'Dinner', :veg => '', :fruit =>'1', :grain =>'1',:meat =>'2', :milk =>'', :additional_serve =>'')
-m14 = Mealplan.create(:date => '11-05-2018', :user_id => '4',:mealtype => 'Breakfast', :veg => '', :fruit =>'1', :grain =>'',:meat =>'', :milk =>'1', :additional_serve =>'')
-m15 = Mealplan.create(:date => '11-05-2018', :user_id => '4',:mealtype => 'Lunch', :veg => '', :fruit =>'', :grain =>'1',:meat =>'2', :milk =>'', :additional_serve =>'')
-m16 = Mealplan.create(:date => '12-05-2018', :user_id => '4',:mealtype => 'Breakfast', :veg => '', :fruit =>'', :grain =>'',:meat =>'', :milk =>'1', :additional_serve =>'')
-m17 = Mealplan.create(:date => '14-05-2018', :user_id => '4',:mealtype => 'Lunch', :veg => '1', :fruit =>'1', :grain =>'',:meat =>'2', :milk =>'', :additional_serve =>'')
-m18 = Mealplan.create(:date => '14-05-2018', :user_id => '4',:mealtype => 'Dinner', :veg => '1', :fruit =>'', :grain =>'1',:meat =>'2', :milk =>'', :additional_serve =>'2')
-m19 = Mealplan.create(:date => '10-05-2018', :user_id => '5',:mealtype => 'Breakfast', :veg => '1', :fruit =>'2', :grain =>'1',:meat =>'1', :milk =>'1', :additional_serve =>'')
-m20 = Mealplan.create(:date => '10-05-2018', :user_id => '5',:mealtype => 'Lunch', :veg => '1', :fruit =>'', :grain =>'',:meat =>'', :milk =>'', :additional_serve =>'')
-m21 = Mealplan.create(:date => '10-05-2018', :user_id => '5',:mealtype => 'Snack', :veg => '', :fruit =>'', :grain =>'',:meat =>'', :milk =>'', :additional_serve =>'1')
-m22 = Mealplan.create(:date => '10-05-2018', :user_id => '5',:mealtype => 'Dinner', :veg => '', :fruit =>'1', :grain =>'1',:meat =>'2', :milk =>'', :additional_serve =>'')
-m23 = Mealplan.create(:date => '15-05-2018', :user_id => '5',:mealtype => 'Breakfast', :veg => '', :fruit =>'1', :grain =>'',:meat =>'', :milk =>'1', :additional_serve =>'')
-m24 = Mealplan.create(:date => '15-05-2018', :user_id => '5',:mealtype => 'Lunch', :veg => '', :fruit =>'', :grain =>'1',:meat =>'2', :milk =>'', :additional_serve =>'')
-m25 = Mealplan.create(:date => '16-05-2018', :user_id => '5',:mealtype => 'Breakfast', :veg => '', :fruit =>'', :grain =>'',:meat =>'', :milk =>'1', :additional_serve =>'')
-m26 = Mealplan.create(:date => '16-05-2018', :user_id => '5',:mealtype => 'Lunch', :veg => '1', :fruit =>'1', :grain =>'',:meat =>'2', :milk =>'', :additional_serve =>'')
-m27 = Mealplan.create(:date => '16-05-2018', :user_id => '5',:mealtype => 'Dinner', :veg => '1', :fruit =>'', :grain =>'1',:meat =>'2', :milk =>'', :additional_serve =>'2')
+m1 = Mealplan.create(:date => '10-05-2018',:mealtype => 'Breakfast', :veg => '1', :fruit =>'2', :grain =>'1',:meat =>'1', :milk =>'1', :additional_serve =>'')
+m2 = Mealplan.create(:date => '10-05-2018',:mealtype => 'Lunch', :veg => '1', :fruit =>'', :grain =>'',:meat =>'', :milk =>'', :additional_serve =>'')
+m3 = Mealplan.create(:date => '10-05-2018',:mealtype => 'Snack', :veg => '', :fruit =>'', :grain =>'',:meat =>'', :milk =>'', :additional_serve =>'1')
+m4 = Mealplan.create(:date => '10-05-2018',:mealtype => 'Dinner', :veg => '', :fruit =>'1', :grain =>'1',:meat =>'2', :milk =>'', :additional_serve =>'')
+m5 = Mealplan.create(:date => '11-05-2018',:mealtype => 'Breakfast', :veg => '', :fruit =>'1', :grain =>'',:meat =>'', :milk =>'1', :additional_serve =>'')
+m6 = Mealplan.create(:date => '11-05-2018',:mealtype => 'Lunch', :veg => '', :fruit =>'', :grain =>'1',:meat =>'2', :milk =>'', :additional_serve =>'')
+m7 = Mealplan.create(:date => '12-05-2018',:mealtype => 'Breakfast', :veg => '', :fruit =>'', :grain =>'',:meat =>'', :milk =>'1', :additional_serve =>'')
+m8 = Mealplan.create(:date => '12-05-2018',:mealtype => 'Lunch', :veg => '1', :fruit =>'1', :grain =>'',:meat =>'2', :milk =>'', :additional_serve =>'')
+m9 = Mealplan.create(:date => '12-05-2018',:mealtype => 'Dinner', :veg => '1', :fruit =>'', :grain =>'1',:meat =>'2', :milk =>'', :additional_serve =>'2')
+m10 = Mealplan.create(:date => '10-05-2018',:mealtype => 'Breakfast', :veg => '1', :fruit =>'2', :grain =>'1',:meat =>'1', :milk =>'1', :additional_serve =>'')
+m11 = Mealplan.create(:date => '10-05-2018',:mealtype => 'Lunch', :veg => '1', :fruit =>'', :grain =>'',:meat =>'', :milk =>'', :additional_serve =>'')
+m12 = Mealplan.create(:date => '10-05-2018',:mealtype => 'Snack', :veg => '', :fruit =>'', :grain =>'',:meat =>'', :milk =>'', :additional_serve =>'1')
+m13 = Mealplan.create(:date => '10-05-2018',:mealtype => 'Dinner', :veg => '', :fruit =>'1', :grain =>'1',:meat =>'2', :milk =>'', :additional_serve =>'')
+m14 = Mealplan.create(:date => '11-05-2018',:mealtype => 'Breakfast', :veg => '', :fruit =>'1', :grain =>'',:meat =>'', :milk =>'1', :additional_serve =>'')
+m15 = Mealplan.create(:date => '11-05-2018',:mealtype => 'Lunch', :veg => '', :fruit =>'', :grain =>'1',:meat =>'2', :milk =>'', :additional_serve =>'')
+m16 = Mealplan.create(:date => '12-05-2018',:mealtype => 'Breakfast', :veg => '', :fruit =>'', :grain =>'',:meat =>'', :milk =>'1', :additional_serve =>'')
+m17 = Mealplan.create(:date => '14-05-2018',:mealtype => 'Lunch', :veg => '1', :fruit =>'1', :grain =>'',:meat =>'2', :milk =>'', :additional_serve =>'')
+m18 = Mealplan.create(:date => '14-05-2018',:mealtype => 'Dinner', :veg => '1', :fruit =>'', :grain =>'1',:meat =>'2', :milk =>'', :additional_serve =>'2')
+m19 = Mealplan.create(:date => '10-05-2018',:mealtype => 'Breakfast', :veg => '1', :fruit =>'2', :grain =>'1',:meat =>'1', :milk =>'1', :additional_serve =>'')
+m20 = Mealplan.create(:date => '10-05-2018',:mealtype => 'Lunch', :veg => '1', :fruit =>'', :grain =>'',:meat =>'', :milk =>'', :additional_serve =>'')
+m21 = Mealplan.create(:date => '10-05-2018',:mealtype => 'Snack', :veg => '', :fruit =>'', :grain =>'',:meat =>'', :milk =>'', :additional_serve =>'1')
+m22 = Mealplan.create(:date => '10-05-2018',:mealtype => 'Dinner', :veg => '', :fruit =>'1', :grain =>'1',:meat =>'2', :milk =>'', :additional_serve =>'')
+m23 = Mealplan.create(:date => '15-05-2018',:mealtype => 'Breakfast', :veg => '', :fruit =>'1', :grain =>'',:meat =>'', :milk =>'1', :additional_serve =>'')
+m24 = Mealplan.create(:date => '15-05-2018',:mealtype => 'Lunch', :veg => '', :fruit =>'', :grain =>'1',:meat =>'2', :milk =>'', :additional_serve =>'')
+m25 = Mealplan.create(:date => '16-05-2018',:mealtype => 'Breakfast', :veg => '', :fruit =>'', :grain =>'',:meat =>'', :milk =>'1', :additional_serve =>'')
+m26 = Mealplan.create(:date => '16-05-2018',:mealtype => 'Lunch', :veg => '1', :fruit =>'1', :grain =>'',:meat =>'2', :milk =>'', :additional_serve =>'')
+m27 = Mealplan.create(:date => '16-05-2018',:mealtype => 'Dinner', :veg => '1', :fruit =>'', :grain =>'1',:meat =>'2', :milk =>'', :additional_serve =>'2')
 
 
 
@@ -139,11 +139,6 @@ f3.users << u7 << u8 << u9
 f4.users << u5 << u6
 f5.users << u10
 
-# Mealplan links to usercategories
-# s1.usercategories << uc1
-# s2.usercategories << uc1
-# s5.usercategories << uc2
-# s7.usercategories << uc3
 
 #Usercategory link to mealplans
 uc1.servingguides << s1 << s2 << s3
@@ -152,3 +147,9 @@ uc3.servingguides << s7
 uc4.servingguides << s8
 uc5.servingguides << s9
 uc6.servingguides << s10
+
+
+#Mealplan link to users
+u1.mealplans << m1 << m2 << m3 << m4 << m5 << m6 << m7 << m8 << m9
+u2.mealplans << m10 << m11 << m12 << m13 << m14 << m15 << m16 << m17 << m18
+u3.mealplans << m19 << m20 << m21 << m22 << m23 << m24 << m25 << m26 << m27
