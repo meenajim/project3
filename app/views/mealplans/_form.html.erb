@@ -9,37 +9,37 @@
 <h1>Mealplan of the day</h1>
 <%= form_for :mealplan, :url => update_all_mealplans_path, :html => { :method => :put } do %>
 
-<table class="table">
+<table class="table table-bordered">
   <thead>
     <% @servingguide.each do |servingguide| %>
         <tr>
-          <td></td>
-          <td></td>
-          <td>Vegetables & legumes/beans</td>
-          <td>Fruit</td>
-          <td>Grain (cereal) foods, mostly wholegrain</td>
-          <td>Lean meat and poultry, fish, eggs, nuts and seeds, and legumes/beans</td>
-          <td>Milk, yoghurt, cheese and/or alternatives (mostly reduced fat)</td>
-          <td>Approx. number of additional serves from the five food groups or discretionary choices</td>
+          <th width = '10%'>Date</th>
+          <th>Mealtype</th>
+          <th>Vegetables & legumes/beans</th>
+          <th>Fruit</th>
+          <th>Grain (cereal) foods, mostly wholegrain</th>
+          <th>Lean meat and poultry, fish, eggs, nuts and seeds, and legumes/beans</th>
+          <th>Milk, yoghurt, cheese and/or alternatives (mostly reduced fat)</th>
+          <th>Approx. number of additional serves from the five food groups or discretionary choices</th>
+          <th colspan ="1"></th>
         </tr>
+
         <tr>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
+          <td colspan = "2">Recommended daily intake</td>
+
           <td><%= servingguide.veg %></td>
           <td id="Fruit"><%= servingguide.fruit %></td>
           <td id="Grain"><%= servingguide.grain %></td>
           <td id="Meat"><%= servingguide.meat %></td>
           <td id="Milk"><%= servingguide.milk %></td>
           <td id="AddlServe"><%= servingguide.additional_serve %></td>
+          <td colspan = "1"></td>
         </tr>
       <% end %>
       <tr>
-        <th colspan = "8">Enter your mealplan of the day</th>
+        <th colspan = "9">Enter your meal intake of the day</th>
       </tr>
-      <tr>
+      <!-- <tr>
         <th>Date</th>
         <th>Mealtype</th>
         <th>Veg</th>
@@ -48,8 +48,8 @@
         <th>Meat</th>
         <th>Milk</th>
         <th>Additional serve</th>
-        <th colspan="3"></th>
-      </tr>
+        <th colspan="1"></th>
+      </tr> -->
     <!-- <tr>
       <th>Date</th>
       <th>Mealtype</th>
@@ -86,6 +86,7 @@
           <td><%= mealplan_fields.text_field :meat,size: 3 %></td>
           <td><%= mealplan_fields.text_field :milk,size: 3%></td>
           <td><%= mealplan_fields.text_field :additional_serve,size: 3 %></td>
+          <td colspan = "3"></td>
         </tr>
       <% end %>
     <% end %>
