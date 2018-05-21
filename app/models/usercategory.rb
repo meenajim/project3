@@ -9,6 +9,6 @@
 #
 
 class Usercategory < ApplicationRecord
-has_many :servingguide#, :optional =>true
+has_many :servingguides#, :optional =>true
 has_many :users
 end
