@@ -21,7 +21,7 @@
     <% @servingguides.each do |servingguide| %>
       <tr>
 
-        <td><%= servingguide.usercategory.category %></td>
+        <td><%= servingguide.usercategory.try(:category) %></td>
         <td><%= servingguide.age %></td>
         <td><%= servingguide.veg %></td>
         <td><%= servingguide.fruit %></td>

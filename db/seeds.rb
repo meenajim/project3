@@ -57,16 +57,16 @@ u11 = User.create(:name => 'Manager', :password => 'Manager', :usercategory_id =
 #
 
 Servingguide.destroy_all
-s1 = Servingguide.create(:usercategory_id =>'1', :age =>'19', :veg =>'6',:fruit =>'2',:grain =>'6', :meat =>'3',:milk =>'3',:additional_serve =>'3')
-s2 = Servingguide.create(:usercategory_id =>'1', :age =>'51', :veg =>'6',:fruit =>'2',:grain =>'6', :meat =>'3',:milk =>'3',:additional_serve =>'3')
-s3 = Servingguide.create(:usercategory_id =>'1', :age =>'70', :veg =>'5',:fruit =>'2',:grain =>'5', :meat =>'3',:milk =>'4',:additional_serve =>'3')
-s4 = Servingguide.create(:usercategory_id =>'2', :age =>'19', :veg =>'5',:fruit =>'2',:grain =>'6', :meat =>'3',:milk =>'3',:additional_serve =>'3')
-s5 = Servingguide.create(:usercategory_id =>'2', :age =>'51', :veg =>'5',:fruit =>'2',:grain =>'4', :meat =>'2',:milk =>'4',:additional_serve =>'3')
-s6 = Servingguide.create(:usercategory_id =>'2', :age =>'70', :veg =>'5',:fruit =>'2',:grain =>'3', :meat =>'2',:milk =>'4',:additional_serve =>'2')
-s7 = Servingguide.create(:usercategory_id =>'3', :age =>'0', :veg =>'5',:fruit =>'2',:grain =>'9', :meat =>'4',:milk =>'3',:additional_serve =>'3')
-s8 = Servingguide.create(:usercategory_id =>'4', :age =>'0', :veg =>'8',:fruit =>'2',:grain =>'9', :meat =>'3',:milk =>'3',:additional_serve =>'3')
-s9 = Servingguide.create(:usercategory_id =>'5', :age =>'0', :veg =>'6',:fruit =>'2',:grain =>'7', :meat =>'3',:milk =>'4',:additional_serve =>'5')
-s10 = Servingguide.create(:usercategory_id =>'6', :age =>'0', :veg =>'5',:fruit =>'2',:grain =>'7', :meat =>'3',:milk =>'4',:additional_serve =>'3')
+s1 = Servingguide.create(:age =>'19', :veg =>'6',:fruit =>'2',:grain =>'6', :meat =>'3',:milk =>'3',:additional_serve =>'3')
+s2 = Servingguide.create(:age =>'51', :veg =>'6',:fruit =>'2',:grain =>'6', :meat =>'3',:milk =>'3',:additional_serve =>'3')
+s3 = Servingguide.create(:age =>'70', :veg =>'5',:fruit =>'2',:grain =>'5', :meat =>'3',:milk =>'4',:additional_serve =>'3')
+s4 = Servingguide.create(:age =>'19', :veg =>'5',:fruit =>'2',:grain =>'6', :meat =>'3',:milk =>'3',:additional_serve =>'3')
+s5 = Servingguide.create(:age =>'51', :veg =>'5',:fruit =>'2',:grain =>'4', :meat =>'2',:milk =>'4',:additional_serve =>'3')
+s6 = Servingguide.create(:age =>'70', :veg =>'5',:fruit =>'2',:grain =>'3', :meat =>'2',:milk =>'4',:additional_serve =>'2')
+s7 = Servingguide.create(:age =>'0', :veg =>'5',:fruit =>'2',:grain =>'9', :meat =>'4',:milk =>'3',:additional_serve =>'3')
+s8 = Servingguide.create(:age =>'0', :veg =>'8',:fruit =>'2',:grain =>'9', :meat =>'3',:milk =>'3',:additional_serve =>'3')
+s9 = Servingguide.create(:age =>'0', :veg =>'6',:fruit =>'2',:grain =>'7', :meat =>'3',:milk =>'4',:additional_serve =>'5')
+s10 = Servingguide.create(:age =>'0', :veg =>'5',:fruit =>'2',:grain =>'7', :meat =>'3',:milk =>'4',:additional_serve =>'3')
 
 # Table name: mealplans
 #
@@ -124,18 +124,13 @@ m27 = Mealplan.create(:date => '16-05-2018', :user_id => '5',:mealtype => 'Dinne
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-# Usercategory.destroy_all
-# uc1 = Usercategory.create(:category =>'')
-# uc2 = Usercategory.create(:category =>'')
-# uc3 = Usercategory.create(:category =>'')
-# uc4 = Usercategory.create(:category =>'')
-# uc5 = Usercategory.create(:category =>'')
-# uc6 = Usercategory.create(:category =>'')
-# uc7 = Usercategory.create(:category =>'')
-# uc8 = Usercategory.create(:category =>'')
-# uc9 = Usercategory.create(:category =>'')
-# uc10 = Usercategory.create(:category =>'')
-
+Usercategory.destroy_all
+uc1 = Usercategory.create(:category =>'Pregnant')
+uc2 = Usercategory.create(:category =>'Lactating')
+uc3 = Usercategory.create(:category =>'Men')
+uc4 = Usercategory.create(:category =>'Women')
+uc5 = Usercategory.create(:category =>'Girl')
+uc6 = Usercategory.create(:category =>'Boy')
 
 # Linking the tables
 # Family links to users
@@ -143,3 +138,17 @@ f1.users << u1 << u2 << u3 << u4
 f3.users << u7 << u8 << u9
 f4.users << u5 << u6
 f5.users << u10
+
+# Mealplan links to usercategories
+# s1.usercategories << uc1
+# s2.usercategories << uc1
+# s5.usercategories << uc2
+# s7.usercategories << uc3
+
+#Usercategory link to mealplans
+uc1.servingguides << s1 << s2 << s3
+uc2.servingguides << s4 << s5 << s6
+uc3.servingguides << s7
+uc4.servingguides << s8
+uc5.servingguides << s9
+uc6.servingguides << s10
