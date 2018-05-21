@@ -152,3 +152,10 @@ uc3.servingguides << s7
 uc4.servingguides << s8
 uc5.servingguides << s9
 uc6.servingguides << s10
+
+#Usercatagory to users
+# uc1.users << u1 << u7 << u11
+# uc2.users << u2 << u8 << u10
+# uc5.users << u3 << u6
+# uc3.users << u5
+# uc6.users << u9 << u4
