@@ -125,12 +125,12 @@ m27 = Mealplan.create(:date => '16-05-2018', :user_id => '5',:mealtype => 'Dinne
 #  updated_at :datetime         not null
 #
 Usercategory.destroy_all
-uc1 = Usercategory.create(:category =>'Pregnant')
-uc2 = Usercategory.create(:category =>'Lactating')
-uc3 = Usercategory.create(:category =>'Men')
-uc4 = Usercategory.create(:category =>'Women')
-uc5 = Usercategory.create(:category =>'Girl')
-uc6 = Usercategory.create(:category =>'Boy')
+uc1 = Usercategory.create(:category =>'Man')
+uc2 = Usercategory.create(:category =>'Woman')
+uc3 = Usercategory.create(:category =>'Pregnant')
+uc4 = Usercategory.create(:category =>'Lactating')
+uc5 = Usercategory.create(:category =>'Boy')
+uc6 = Usercategory.create(:category =>'Girl')
 
 # Linking the tables
 # Family links to users

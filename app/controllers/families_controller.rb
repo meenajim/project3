@@ -7,35 +7,25 @@ class FamiliesController < ApplicationController
     #*******************************************
     if @current_user.present?
       @families = Family.where(:id => @current_user.family_id)
-
-    @family_user = User.where(:family_id =>@current_user.family_id )
-    @mealplans_family = Mealplan.where(:user_id => @family_user.ids)
-
+      @family_user = User.where(:family_id =>@current_user.family_id )
+      @mealplans_family = Mealplan.where(:user_id => @family_user.ids)
     end
-
-
     #*******************************************
     # if @current_user.present?
     #   @family_user = Users.where(:family_id => @current_user.family_id)
     # end
-
-
   end
-
   # GET /families/1
   # GET /families/1.json
   def show
   end
-
   # GET /families/new
   def new
     @family = Family.new
   end
-
   # GET /families/1/edit
   def edit
   end
-
   # POST /families
   # POST /families.json
   def create
