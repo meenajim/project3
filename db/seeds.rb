@@ -140,15 +140,15 @@ f4.users << u5 << u6
 f5.users << u10
 
 # Mealplan links to usercategories
-# s1.usercategories << uc1
-# s2.usercategories << uc1
-# s5.usercategories << uc2
-# s7.usercategories << uc3
+s1.usercategories << uc1
+s2.usercategories << uc1
+s5.usercategories << uc2
+s7.usercategories << uc3
 
 #Usercategory link to mealplans
-uc1.servingguides << s1 << s2 << s3
-uc2.servingguides << s4 << s5 << s6
-uc3.servingguides << s7
-uc4.servingguides << s8
-uc5.servingguides << s9
-uc6.servingguides << s10
+# uc1.servingguides << s1 << s2 << s3
+# uc2.servingguides << s4 << s5 << s6
+# uc3.servingguides << s7
+# uc4.servingguides << s8
+# uc5.servingguides << s9
+# uc6.servingguides << s10
