@@ -29,17 +29,17 @@ f5 = Family.create(:name =>'Beale', :address=>'123 Standon avenue, Startford, NS
 #  user_type       :text
 
 User.destroy_all
-u1 = User.create(:name => 'Jeff Jackson', :password => 'Jeff', :usercategory_id => '1', :dob => '10-01-1975', :email => 'jeff@jackson.com', :user_type=>'user', :activated=>'t')
-u2 = User.create(:name => 'Trisha Jackson', :password => 'Trisha', :usercategory_id => '2', :dob => '10-01-1978', :email => 'trisha@jackson.com', :user_type=>'user', :activated=>'t')
-u3 = User.create(:name => 'Julie Jackson', :password => 'Julie', :usercategory_id => '5', :dob => '01-05-2005', :email => 'julie@jackson.com', :user_type=>'user', :activated=>'t')
-u4 = User.create(:name => 'Joshua Jackson', :password => 'Joshua', :usercategory_id => '6', :dob => '30-06-2010', :email => 'joshua@jackson.com', :user_type=>'user', :activated=>'t')
-u5 = User.create(:name => 'Eleni Atkins', :password => 'Eleni', :usercategory_id => '3', :dob => '04-10-1995', :email => 'eleni@atkins.com', :user_type=>'user', :activated=>'t')
-u6 = User.create(:name => 'Chelsea Atkins', :password => 'Chelsea', :usercategory_id => '5', :dob => '15-11-2015', :email => 'chelsea@atkins.com', :user_type=>'user', :activated=>'t')
-u7 = User.create(:name => 'Robert Myers', :password => 'Robert', :usercategory_id => '1', :dob => '20-10-1950', :email => 'robert@myers.com', :user_type=>'user', :activated=>'t')
-u8 = User.create(:name => 'Ruby Myers', :password => 'Ruby', :usercategory_id => '2', :dob => '22-12-1975', :email => 'ruby@myers.com', :user_type=>'user', :activated=>'t')
-u9 = User.create(:name => 'Robinson Myers', :password => 'Robinson', :usercategory_id => '6', :dob => '12-12-2000', :email => 'robinson@myers.com', :user_type=>'user', :activated=>'t')
-u10 = User.create(:name => 'Jenny Beale', :password => 'Jenny', :usercategory_id => '2', :dob => '17-11-2000', :email => 'jenny@beale.com', :user_type=>'user', :activated=>'t')
-u11 = User.create(:name => 'Manager', :password => 'Manager', :usercategory_id => '1', :dob => '10-10-2000', :email => 'manager@manager.com', :user_type => 'Admin' , :activated=>'t')
+u1 = User.create(:name => 'Jeff Jackson', :password => 'Jeff', :dob => '10-01-1975', :email => 'jeff@jackson.com', :user_type=>'user', :activated=>'t')
+u2 = User.create(:name => 'Trisha Jackson', :password => 'Trisha', :dob => '10-01-1978', :email => 'trisha@jackson.com', :user_type=>'user', :activated=>'t')
+u3 = User.create(:name => 'Julie Jackson', :password => 'Julie', :dob => '01-05-2005', :email => 'julie@jackson.com', :user_type=>'user', :activated=>'t')
+u4 = User.create(:name => 'Joshua Jackson', :password => 'Joshua', :dob => '30-06-2010', :email => 'joshua@jackson.com', :user_type=>'user', :activated=>'t')
+u5 = User.create(:name => 'Eleni Atkins', :password => 'Eleni', :dob => '04-10-1995', :email => 'eleni@atkins.com', :user_type=>'user', :activated=>'t')
+u6 = User.create(:name => 'Chelsea Atkins', :password => 'Chelsea', :dob => '15-11-2015', :email => 'chelsea@atkins.com', :user_type=>'user', :activated=>'t')
+u7 = User.create(:name => 'Robert Myers', :password => 'Robert', :dob => '20-10-1950', :email => 'robert@myers.com', :user_type=>'user', :activated=>'t')
+u8 = User.create(:name => 'Ruby Myers', :password => 'Ruby', :dob => '22-12-1975', :email => 'ruby@myers.com', :user_type=>'user', :activated=>'t')
+u9 = User.create(:name => 'Robinson Myers', :password => 'Robinson', :dob => '12-12-2000', :email => 'robinson@myers.com', :user_type=>'user', :activated=>'t')
+u10 = User.create(:name => 'Jenny Beale', :password => 'Jenny', :dob => '17-11-2000', :email => 'jenny@beale.com', :user_type=>'user', :activated=>'t')
+u11 = User.create(:name => 'Manager', :password => 'Manager', :dob => '10-10-2000', :email => 'manager@manager.com', :user_type => 'Admin' , :activated=>'t')
 
 # Table name: servingguides
 #
@@ -153,3 +153,10 @@ uc6.servingguides << s10
 u1.mealplans << m1 << m2 << m3 << m4 << m5 << m6 << m7 << m8 << m9
 u2.mealplans << m10 << m11 << m12 << m13 << m14 << m15 << m16 << m17 << m18
 u3.mealplans << m19 << m20 << m21 << m22 << m23 << m24 << m25 << m26 << m27
+
+#User link to usercategories
+uc1.users << u1 << u7 << u9
+uc2.users << u2 << u5 << u8
+uc3.users << u10
+uc5.users << u4
+uc6.users << u3 << u6
