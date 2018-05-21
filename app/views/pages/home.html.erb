@@ -5,12 +5,50 @@
     <title>Nutrition</title>
   </head>
   <body>
-
-
       <%if @current_user.present?%>
-      <h3>Welcome back <%=@current_user.name%></h3>
 
+      <!-- <div>
+        <div class="row text-center">
 
+          <div class="col post">
+            <%= image_tag "breakfast.jpg", :class => 'overlays'%>
+          <div class="post-s">
+              <p>Our mission is to educate musicians effectively, empowering them with the knowledge, skills, and confidence to express themselves dynamically through modern popular music.</p>
+          </div>
+        </div>
+          <div class="col post">
+            <%= image_tag "lunch.webp", :class => 'overlays'%>
+
+          </div>
+
+          <div class="col post">
+            <%= image_tag "dinner.jpg", :class => 'overlays'%>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="container">
+      <p></p>
+        <div class="row text-center">
+          <div class="col">
+            <h3>MISSION</h3>
+                  Our mission is to educate musicians effectively, empowering them with the knowledge, skills, and confidence to express themselves dynamically through modern popular music.
+          </div>
+          <div class="col">
+            <h3>VISION</h3>
+                  Our vision is to create an inspiring, diverse, and inclusive higher education space in which students, faculty, and members of the community may gather together to study, create, perform, record, and share music.
+
+          </div>
+          <div class="col">
+            <h3>OBJECTIVES</h3>
+                  Teach - modern popular music in many instruments.
+                  Create - compose new music and remain non-judgemental toward the process and product of others.
+                  Perform - at select venues and connect with audiences.
+          </div>
+        </div>
+      </div>
+ -->
 
       <% else %>
       <h2>Please Sign in to proceed!</h2>

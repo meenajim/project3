@@ -1,5 +1,7 @@
 @import "bootstrap";
 
+
+
 .guidelines{
   border:2px solid grey;
   background-color:#f8fdf8;
@@ -42,12 +44,51 @@ div.navbar-nav a.nav-item.nav-link:hover {
   background-color:#d2f5d2;
 }
 
+.overlays{
+  width:90%;
+}
+
+// *****************
+.post{
+  width: 90%;
+  // height: 400px;
+  position: relative;
+  cursor: pointer;
+}
+.post:hover .post-s{
+  width: 83%;
+}
+.post img {
+  display: block;
+  width: 90%;
+  // height: 400px;
+}
+
+.post-s{
+  width: 0px;
+  height: 210px;
+  background: rgba(233, 194, 33, 0.43);
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  transition: 0.7s ease;
+}
+.post-s p{
+  color: white;
+  font-size: 16px;
+}
+// **********
+
 .logo{
-  width:20%;
+  width:15%;
 }
 .logoname{
-  width:60%;
+  width:50%;
 }
+
 
 .navbar-light .navbar-nav .nav-link {
   color:darkgreen;
@@ -65,6 +106,8 @@ div.navbar-nav a.nav-item.nav-link:hover {
 {
   background-color: #ffffff;
 }
+
+
 #calendar {
   width: 50%
 }

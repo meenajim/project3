@@ -10,7 +10,7 @@ class SessionController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path
     else
-      flash[:error] = "Invalid username/password or user not activated. Please check your email for activation details."
+      flash[:error] = "Invalid username/password."
       redirect_to login_path
     end
   end

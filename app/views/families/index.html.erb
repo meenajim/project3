@@ -6,6 +6,7 @@
         <% if @families.present? %>
               <table>
                 <thead>
+                
                   <tr>
                     <th>Name</th>
                     <th>Address</th>
@@ -46,7 +47,7 @@
     <p id="notice"><%= notice %></p>
     <table id="familymealplan">
         <tbody>
-          <% @mealplans_family.each do |mealplan1| %>
+          <% @mealplans_family.order(:user_id).each do |mealplan1| %>
             <tr class="date-<%= mealplan1.date %>">
               <td><%= mealplan1.user.name %></td>
               <td><%= mealplan1.date %></td>
