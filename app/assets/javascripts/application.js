@@ -12,7 +12,10 @@
 //
 //= require rails-ujs
 //= require jquery
-
-//= require_tree .
 //= require moment
 //= require fullcalendar
+//= require highcharts
+//= require data
+//= require exporting
+//= require export-data
+//= require_tree .

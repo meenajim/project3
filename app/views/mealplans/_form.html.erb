@@ -64,7 +64,7 @@
   </thead>
 
   <tbody>
-    <% @mealplans.each do |mealplan| %>
+    <% @mealplans.order(:created_at).each do |mealplan| %>
       <%= fields_for "mealplan[]", mealplan do |mealplan_fields| %>
 
         <!-- <tr>

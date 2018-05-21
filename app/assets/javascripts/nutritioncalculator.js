@@ -88,7 +88,8 @@ document.addEventListener('DOMContentLoaded', function(){
       }
     }
   }
-
-  document.getElementById('title-search').addEventListener('submit', search);
-
+  const searchForm = document.getElementById('title-search');
+  if (searchForm) {
+    searchForm.addEventListener('submit', search);
+  }
   }, false);

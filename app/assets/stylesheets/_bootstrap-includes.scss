@@ -10,15 +10,24 @@
   border: 1px solid #000;
 }
 
-div.navigation a {
+.center {
+  text-align: center;
+}
+.layout{
+  width:10%;
+  border:2px solid black;
+}
+
+div.navbar-nav a {
   color: darkgreen;
   font-size: 20px;
   text-decoration: none;
 
 }
-div.navigation a:hover{
+
+div.navbar-nav a.nav-item.nav-link:hover {
   color:black;
-  background-color:#e8f2e82b;
+  background-color:#d2f5d2;
 }
 
 .logo{
@@ -31,7 +40,7 @@ div.navigation a:hover{
 .navbar-light .navbar-nav .nav-link {
   color:darkgreen;
   font-size:20px;
-  background-color:#e8f2e82b;
+  // background-color:#e8f2e8;
 
 }
 

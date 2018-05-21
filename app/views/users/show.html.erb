@@ -1,7 +1,8 @@
+<!--
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+<strong>Name:</strong>
   <%= @user.name %>
 </p>
 
@@ -26,5 +27,36 @@
   <%= @user.family.name%>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %>
+<%= link_to 'Edit', edit_user_path(@user) %>-->
 <!-- <%= link_to 'Back', users_path %> -->
+
+<table class ="table layout" align = "center">
+  <p id="notice"><%= notice %></p>
+
+  <tr>
+  <td>Name</td>
+    <td><%= @user.name %></td>
+  </tr>
+
+  <tr>
+    <td>Usercategory</td>
+    <td><%= @user.usercategory.category %></td>
+  </tr>
+  <tr>
+    <td>Date of birth</td>
+    <td><%= @user.dob %></td>
+  </tr>
+
+  <tr>
+    <td>Email</td>
+    <td><%= @user.email %></td>
+  </tr>
+  <tr>
+    <td>Family</td>
+    <td><%= @user.family.name%></td>
+  </tr>
+
+  <tr><td><%= link_to 'Edit', edit_user_path(@user) %></td></tr>
+  <!-- <%= link_to 'Back', users_path %> -->
+
+</table>
