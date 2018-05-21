@@ -4,9 +4,9 @@
     <p id="notice"><%= notice %></p>
     <h1>My Family</h1>
         <% if @families.present? %>
-              <table>
+              <table class = "table">
                 <thead>
-                
+
                   <tr>
                     <th>Name</th>
                     <th>Address</th>
@@ -29,7 +29,7 @@
           <h4>Please <%= link_to 'click here',edit_user_path(@current_user.id) %> to join/create a family</h4>
         <% end %>
 
-    <table>
+    <table class = "table familylayout">
       <tr>
         <td><h3>Family Members</h3></td>
       </tr>
@@ -44,8 +44,9 @@
 
 
     <!-- Family Members Mealplans-->
+    <h3>Meal history of Family Members</h3>
     <p id="notice"><%= notice %></p>
-    <table id="familymealplan">
+    <table id="familymealplan" class = "table table-striped">
         <tbody>
           <% @mealplans_family.order(:user_id).each do |mealplan1| %>
             <tr class="date-<%= mealplan1.date %>">
