@@ -40,7 +40,7 @@
 
   <div class="field">
     <%= form.label :dob %>
-    <%= form.date_select :dob, id: :user_dob %>
+    <%= form.date_select :dob, id: :user_dob ,start_year:1980,end_year: Date.today.year%>
   </div>
 
   <div class="field">

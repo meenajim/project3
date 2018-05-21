@@ -1,6 +1,18 @@
 @import "bootstrap";
 
-
+.guidelines{
+  border:2px solid grey;
+  background-color:#f8fdf8;
+  h5.specific{
+    color:orange;
+  }
+  h5{
+    color:red;
+  }
+  h6{
+    color:green;
+  }
+}
 .display{
   display:none;
   border: 2px solid black;
