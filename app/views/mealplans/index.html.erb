@@ -21,27 +21,6 @@
 <p></p>
 <table id="mealplans" class = "table table-bordered">
   <thead>
-    <% @servingguide.each do |servingguide| %>
-        <tr>
-          <th colspan = "2" rowspan = "2">Recommended daily serving size</th>
-          <td>Veg</td>
-          <td>Fruit</td>
-          <td>Grain</td>
-          <td>Meat</td>
-          <td>Milk</td>
-          <td colspan = "2">AddlServe</td>
-          <!-- <td colspan = "1"></td> -->
-        </tr>
-        <tr>
-          <td><%= servingguide.veg %></td>
-          <td id="Fruit"><%= servingguide.fruit %></td>
-          <td id="Grain"><%= servingguide.grain %></td>
-          <td id="Meat"><%= servingguide.meat %></td>
-          <td id="Milk"><%= servingguide.milk %></td>
-          <td id="AddlServe" colspan = "2"><%= servingguide.additional_serve %></td>
-          <!-- <td></td> -->
-        </tr>
-      <% end %>
         <tr>
           <th>Date</th>
           <th>Mealtype</th>
@@ -51,8 +30,20 @@
           <th>Meat</th>
           <th>Milk</th>
           <th>Additional serve</th>
-          <th>Chart</th>
+          <th>Graph</th>
         </tr>
+      <% @servingguide.each do |servingguide| %>
+        <tr>
+          <th colspan = "2">Recommended daily serving size</th>
+          <th><%= servingguide.veg %></th>
+          <th id="Fruit"><%= servingguide.fruit %></th>
+          <th id="Grain"><%= servingguide.grain %></th>
+          <th id="Meat"><%= servingguide.meat %></th>
+          <th id="Milk"><%= servingguide.milk %></th>
+          <th id="AddlServe"><%= servingguide.additional_serve %></th>
+          <th></th>
+        </tr>
+      <% end %>
     </thead>
     <tbody>
       <% @mealplan_user.each do |mealplan| %>

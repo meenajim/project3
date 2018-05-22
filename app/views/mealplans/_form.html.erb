@@ -22,7 +22,6 @@
           <th>Lean meat and poultry, fish, eggs, nuts and seeds, and legumes/beans</th>
           <th>Milk, yoghurt, cheese and/or alternatives (mostly reduced fat)</th>
           <th>Approx. number of additional serves from the five food groups or discretionary choices</th>
-          <th colspan ="1"></th>
         </tr>
 
         <tr>
@@ -33,11 +32,10 @@
           <td id="Meat"><%= servingguide.meat %></td>
           <td id="Milk"><%= servingguide.milk %></td>
           <td id="AddlServe"><%= servingguide.additional_serve %></td>
-          <td colspan = "1"></td>
         </tr>
       <% end %>
       <tr>
-        <th colspan = "9">Enter the Serving size for each food type</th>
+        <th colspan = "8">Enter the Serving size for each food type</th>
       </tr>
 
   </thead>
@@ -52,11 +50,9 @@
       <td>65g cooked lean red meat. 80g cooked chicken or turkey. 2 large eggs. 1 cup chick peas. </td>
       <td>1 cup milk. 2 slices of cheddar cheese. 3/4 cup yoghurt.</td>
       <td></td>
-      <td colspan ="1"></td>
     </tr>
     <% @mealplans.order(:created_at).each do |mealplan| %>
       <%= fields_for "mealplan[]", mealplan do |mealplan_fields| %>
-
         <tr>
           <td><%= mealplan.date %></td>
           <td><%= mealplan.mealtype %></td>
@@ -66,7 +62,6 @@
           <td><%= mealplan_fields.text_field :meat,size: 3 %></td>
           <td><%= mealplan_fields.text_field :milk,size: 3%></td>
           <td><%= mealplan_fields.text_field :additional_serve,size: 3 %></td>
-          <td colspan = "3"></td>
         </tr>
       <% end %>
     <% end %>
@@ -78,7 +73,6 @@
       <th id="Meat"><%= @meattotal %></th>
       <th id="Milk"><%= @milktotal %></th>
       <th id="AddlServe"><%= @addltotal %></th>
-      <th colspan = "1"></th>
     </tr>
   </tbody>
 </table>
