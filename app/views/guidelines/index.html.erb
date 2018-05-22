@@ -2,56 +2,54 @@
 <p></p>
 
 <div class = "container guidelines">
-<div id="events">
-  <% @guidelines.each do |guideline| %>
-    <% list = guideline.text.strip.split("\n")%>
+    <div id="events">
+        <% @guidelines.each do |guideline| %>
+          <% list = guideline.text.strip.split("\n")%>
 
-    <div id="guidelist">
+          <div id="guidelist">
 
-      <h5 class = "specific"><%= list[0] %></h5>
-      <h5><%= list[2] %></h5>
-        <h6><%= list[4] %></h6>
-        <ul>
-          <li><%= list[7] %></li>
-          <li><%= list[8] %></li>
-        </ul>
+              <h5 class = "specific"><%= list[0] %></h5>
+              <h5><%= list[2] %></h5>
+                <h6><%= list[4] %></h6>
+                <ul>
+                  <li><%= list[7] %></li>
+                  <li><%= list[8] %></li>
+                </ul>
 
-      <h5><%= list[11] %></h5>
-        <h6><%= list[13] %></h6>
-        <ul>
-          <li><%= list[16] %></li>
-          <li><%= list[17] %></li>
-          <li><%= list[18] %></li>
-          <li><%= list[19] %></li>
-          <li><%= list[20] %></li>
-        </ul>
-        <p><%= list[23] %></p>
+              <h5><%= list[11] %></h5>
+                <h6><%= list[13] %></h6>
+                <ul>
+                  <li><%= list[16] %></li>
+                  <li><%= list[17] %></li>
+                  <li><%= list[18] %></li>
+                  <li><%= list[19] %></li>
+                  <li><%= list[20] %></li>
+                </ul>
+                <p><%= list[23] %></p>
 
-      <h5><%= list[25] %></h5>
-       <h6><%= list[27] %></h6>
-        <p><%= list[29]+list[30]+list[31]%></p>
-         <ul>
-           <li><%= list[34] %></li>
-           <li><%= list[35] %></li>
-         </ul>
-        <p><%= list[38] %></p>
-         <ul>
-           <li><%= list[41] %></li>
-           <li><%= list[42] %></li>
-         </ul>
-        <p><%= list[45] %></p>
-        <p><%= list[46] %></p>
-        <p><%= list[48] %></p>
+              <h5><%= list[25] %></h5>
+               <h6><%= list[27] %></h6>
+                <p><%= list[29]+list[30]+list[31]%></p>
+                 <ul>
+                   <li><%= list[34] %></li>
+                   <li><%= list[35] %></li>
+                 </ul>
+                <p><%= list[38] %></p>
+                 <ul>
+                   <li><%= list[41] %></li>
+                   <li><%= list[42] %></li>
+                 </ul>
+                <p><%= list[45] %></p>
+                <p><%= list[46] %></p>
+                <p><%= list[48] %></p>
 
-      <h5><%= list[50] %></h5>
-       <h6><%= list[52] %></h6>
+              <h5><%= list[50] %></h5>
+               <h6><%= list[52] %></h6>
 
-      <h5><%= list[54] %></h5>
-       <h6><%= list[56] %></h6>
-
-
+              <h5><%= list[54] %></h5>
+               <h6><%= list[56] %></h6>
+          </div>
+        <% end %>
     </div>
-  <% end %>
-</div>
-</div>
+    </div>
 </div>
