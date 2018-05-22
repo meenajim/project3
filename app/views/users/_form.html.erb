@@ -40,12 +40,12 @@
 
   <div class="field">
     <%= form.label :dob %>
-    <%= form.date_select :dob, id: :user_dob ,start_year:1980,end_year: Date.today.year%>
+    <%= form.date_select :dob, id: :user_dob ,start_year:1950,end_year: Date.today.year%>
   </div>
 
   <div class="field">
     <%= form.label :email %>
-    <%= form.email_field :email, id: :user_email %>
+    <%= form.email_field :email, id: :user_email,:required =>true %>
   </div>
 
 
@@ -54,7 +54,7 @@
     <%= form.label :family_id %>
     <%= form.select :family_id, Family.pluck(:name,:id), {:include_blank => '<----- Select FamilyName ----->' }, :required => true%>
     <p>Don't find your family?</p>
-    <p><%= link_to 'Click here',new_family_path %> to create your family</p>
+    <p><%= link_to 'Click here',new_family_path ,:class => 'badge badge-warning graph'%> to create your family</p>
 
 
   </div>

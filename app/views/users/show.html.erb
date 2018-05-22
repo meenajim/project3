@@ -1,35 +1,3 @@
-<!--
-<p id="notice"><%= notice %></p>
-
-<p>
-<strong>Name:</strong>
-  <%= @user.name %>
-</p>
-
-
-<p>
-  <strong>Usercategory:</strong>
-  <%= @user.usercategory.category %>
-</p>
-
-<p>
-  <strong>Date of birth:</strong>
-  <%= @user.dob %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Family:</strong>
-  <%= @user.family.name%>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %>-->
-<!-- <%= link_to 'Back', users_path %> -->
-
 <table class ="table layout" align = "center">
   <p id="notice"><%= notice %></p>
 
@@ -56,7 +24,7 @@
     <td><%= @user.family.name%></td>
   </tr>
 
-  <tr><td><%= link_to 'Edit', edit_user_path(@user) %></td></tr>
+  <tr><td colspan = "2"><%= link_to 'Edit', edit_user_path(@user) %></td></tr>
   <!-- <%= link_to 'Back', users_path %> -->
 
 </table>

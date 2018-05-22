@@ -98,10 +98,13 @@ div.navbar-nav a.nav-item.nav-link:hover {
 .navbar-light .navbar-nav .nav-link {
   color:darkgreen;
   font-size:20px;
+  padding:0.5em;
   // background-color:#e8f2e8;
 
 }
-
+.navbar{
+  padding:0;
+}
 .navbar-nav {
   width: 100%;
   justify-content: space-between;
@@ -112,10 +115,18 @@ div.navbar-nav a.nav-item.nav-link:hover {
   background-color: #ffffff;
 }
 
-
-#calendar {
-  width: 50%
+.graph{
+  font-size: 15px;
 }
+#calendar {
+  width: 50%;
+}
+// @media only screen and (max-width:438px) {
+//   #calendar {
+//     width: 35%;
+//   }
+// }
+//
 
 .footer
 {

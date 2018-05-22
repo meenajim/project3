@@ -6,7 +6,7 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>Mealplan of the day</h1>
+<h1>Meal intake of the day</h1>
 <%= form_for :mealplan, :url => update_all_mealplans_path, :html => { :method => :put } do %>
 
 <table class="table table-bordered">
@@ -39,44 +39,11 @@
       <tr>
         <th colspan = "9">Enter your meal intake of the day</th>
       </tr>
-      <!-- <tr>
-        <th>Date</th>
-        <th>Mealtype</th>
-        <th>Veg</th>
-        <th>Fruit</th>
-        <th>Grain</th>
-        <th>Meat</th>
-        <th>Milk</th>
-        <th>Additional serve</th>
-        <th colspan="1"></th>
-      </tr> -->
-    <!-- <tr>
-      <th>Date</th>
-      <th>Mealtype</th>
-      <th>Veg</th>
-      <th>Fruit</th>
-      <th>Grain</th>
-      <th>Meat</th>
-      <th>Milk</th>
-      <th>Additional serve</th>
-      <th colspan="3"></th>
-    </tr> -->
   </thead>
 
   <tbody>
     <% @mealplans.order(:created_at).each do |mealplan| %>
       <%= fields_for "mealplan[]", mealplan do |mealplan_fields| %>
-
-        <!-- <tr>
-          <td><%= mealplan.date %></td>
-          <td><%= mealplan.mealtype %></td>
-          <td><%= mealplan_fields.text_field :veg ,size: 3%></td>
-          <td><%= mealplan_fields.text_field :fruit,size: 3 %></td>
-          <td><%= mealplan_fields.text_field :grain,size: 3%></td>
-          <td><%= mealplan_fields.text_field :meat,size: 3 %></td>
-          <td><%= mealplan_fields.text_field :milk,size: 3%></td>
-          <td><%= mealplan_fields.text_field :additional_serve,size: 3 %></td>
-        </tr> -->
         <tr>
           <td><%= mealplan.date %></td>
           <td><%= mealplan.mealtype %></td>

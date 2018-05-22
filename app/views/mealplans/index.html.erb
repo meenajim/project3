@@ -7,17 +7,18 @@
 
 <%if @current_user.nil?%>
 
-<h2>Please <%= link_to 'Sign in', login_path %></h2>
+<h2>Please <%= link_to 'Sign in', login_path,:class => 'badge badge-warning' %></h2>
 
 <% elsif @current_user.present?%>
 
 <p id="notice"><%= notice %></p>
 
-<h1>Mealplans</h1>
-<h2><%= link_to 'Todays Mealplan', new_mealplan_path %></h2>
+<h2><%= link_to 'Todays Mealplan', new_mealplan_path,:class => 'badge badge-warning' %></h2>
 
 <div id="calendar">
 </div>
+<p></p>
+<p></p>
 <table id="mealplans" class = "table">
   <thead>
     <% @servingguide.each do |servingguide| %>
@@ -47,7 +48,6 @@
         </tr>
       <% end %>
         <tr>
-          <th>User</th>
           <th>Date</th>
           <th>Mealtype</th>
           <th>Veg</th>
@@ -62,7 +62,6 @@
     <tbody>
       <% @mealplan_user.each do |mealplan| %>
         <tr class="date-<%= mealplan.date %>">
-          <td><%= mealplan.user_id %></td>
           <td><%= mealplan.date %></td>
           <td><%= mealplan.mealtype %></td>
           <td><%= mealplan.veg %></td>
@@ -71,7 +70,7 @@
           <td><%= mealplan.meat %></td>
           <td><%= mealplan.milk %></td>
           <td><%= mealplan.additional_serve %></td>
-          <td><%= link_to 'View Graph', mealplanshowbydate_path(mealplan.date)%></td>
+          <td><%= link_to 'View Graph', mealplanshowbydate_path(mealplan.date),:class => 'badge badge-warning graph'%></td>
       <% end %>
 
     </tbody>

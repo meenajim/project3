@@ -26,7 +26,7 @@
                 </tbody>
               </table>
         <% else %>
-          <h4>Please <%= link_to 'click here',edit_user_path(@current_user.id) %> to join/create a family</h4>
+          <h4>Please <%= link_to 'click here',edit_user_path(@current_user.id),:class => 'badge badge-warning'%> to join/create a family</h4>
         <% end %>
 
     <table class = "table familylayout">
