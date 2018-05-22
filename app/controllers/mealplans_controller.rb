@@ -24,8 +24,8 @@ class MealplansController < ApplicationController
       @mealplan.update_attributes(mealplan_params(id))
     end
   # Mealplan.update_all({veg: 4},{id: params[:id]})
-  # redirect_to(mealplans_url)
-  redirect_to(new_mealplan_path)
+  redirect_to(mealplans_url)
+  # redirect_to(new_mealplan_path)
   end
 
   def show
