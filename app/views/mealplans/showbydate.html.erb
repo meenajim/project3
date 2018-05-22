@@ -16,7 +16,6 @@
     <table class = "table">
       <thead>
         <tr>
-          <th>User</th>
           <th>Date</th>
           <th>Mealtype</th>
           <th>Veg</th>
@@ -32,7 +31,6 @@
       <tbody>
         <% @mealplan_showbydate.each do |mealplan| %>
           <tr>
-            <td><%= mealplan.user_id %></td>
             <td><%= mealplan.date %></td>
             <td><%= mealplan.mealtype %></td>
             <td><%= mealplan.veg %></td>
@@ -95,4 +93,6 @@
          </tbody>
 
       </table>
+
+  <br><br>
 <% end %>

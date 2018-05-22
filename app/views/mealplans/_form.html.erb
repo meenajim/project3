@@ -12,9 +12,10 @@
 <table class="table table-bordered">
   <thead>
     <% @servingguide.each do |servingguide| %>
+
         <tr>
           <th width = '10%'>Date</th>
-          <th>Mealtype</th>
+          <th>Meal</th>
           <th>Vegetables & legumes/beans</th>
           <th>Fruit</th>
           <th>Grain (cereal) foods, mostly wholegrain</th>
@@ -25,8 +26,7 @@
         </tr>
 
         <tr>
-          <td colspan = "2">Recommended daily intake</td>
-
+          <td colspan = "2">Recommended daily serving size</td>
           <td><%= servingguide.veg %></td>
           <td id="Fruit"><%= servingguide.fruit %></td>
           <td id="Grain"><%= servingguide.grain %></td>
@@ -37,13 +37,26 @@
         </tr>
       <% end %>
       <tr>
-        <th colspan = "9">Enter your meal intake of the day</th>
+        <th colspan = "9">Enter the Serving size for each food type</th>
       </tr>
+
   </thead>
 
   <tbody>
+
+    <tr>
+      <td colspan='2'>Samples of what constitutes 1 serve in each food type</td>
+      <td>1/2 cup cooked vegetables (broccoli, carrots, etc.). 1/2 cup cooked beans, peas or lentils. 1 cup raw salad vegetables. 1/2 cup sweet corn. </td>
+      <td>1 medium apple, banana, orange or pear. 2 small apricots, kiwi fruits or plums.</td>
+      <td>1 slice bread. 1/2 cup cooked rice, pasta, noodles etc. 1/2 cup cooked porridge. 1 small muffin or scone.</td>
+      <td>65g cooked lean red meat. 80g cooked chicken or turkey. 2 large eggs. 1 cup chick peas. </td>
+      <td>1 cup milk. 2 slices of cheddar cheese. 3/4 cup yoghurt.</td>
+      <td></td>
+      <td colspan ="1"></td>
+    </tr>
     <% @mealplans.order(:created_at).each do |mealplan| %>
       <%= fields_for "mealplan[]", mealplan do |mealplan_fields| %>
+
         <tr>
           <td><%= mealplan.date %></td>
           <td><%= mealplan.mealtype %></td>
@@ -57,9 +70,20 @@
         </tr>
       <% end %>
     <% end %>
-
+    <tr>
+      <th colspan = "2">Totals for today:</th>
+      <th><%= @vegtotal %></th>
+      <th id="Fruit"><%= @fruittotal %></th>
+      <th id="Grain"><%= @graintotal %></th>
+      <th id="Meat"><%= @meattotal %></th>
+      <th id="Milk"><%= @milktotal %></th>
+      <th id="AddlServe"><%= @addltotal %></th>
+      <th colspan = "1"></th>
+    </tr>
   </tbody>
 </table>
+
+
 <div class="actions">
     <%= submit_tag %>
   </div>

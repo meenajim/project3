@@ -47,6 +47,19 @@
     <h3>Meal history of Family Members</h3>
     <p id="notice"><%= notice %></p>
     <table id="familymealplan" class = "table table-striped">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Date</th>
+          <th>Meal Type</th>
+          <th>Veg</th>
+          <th>Fruit</th>
+          <th>Grain</th>
+          <th>Meat</th>
+          <th>Milk</th>
+          <th>Additional serve</th>
+        </tr>
+      </thead>
         <tbody>
           <% @mealplans_family.order(:user_id).each do |mealplan1| %>
             <tr class="date-<%= mealplan1.date %>">

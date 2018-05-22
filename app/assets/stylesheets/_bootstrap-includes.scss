@@ -1,6 +1,8 @@
 @import "bootstrap";
 
-
+.container{
+// background-color:grey;
+}
 .guidelines{
   border:2px solid grey;
   background-color:#f8fdf8;
@@ -50,6 +52,7 @@ div.navbar-nav a {
 div.navbar-nav a.nav-item.nav-link:hover {
   color:black;
   background-color:#d2f5d2;
+
 }
 
 .overlays{
@@ -85,18 +88,24 @@ div.navbar-nav a.nav-item.nav-link:hover {
   transition: 0.7s ease;
 }
 .post-s p{
-  color: white;
-  font-size: 16px;
+  // color: #eb051d;
+  color: #210705;
+
+  font-size: 20px;
 }
 // **********
 
 .logo{
   width:15%;
 }
+
 .logoname{
   width:50%;
 }
 
+.serveguide{
+  width:100%;
+}
 
 .navbar-light .navbar-nav .nav-link {
   color:darkgreen;
@@ -130,11 +139,35 @@ div.navbar-nav a.nav-item.nav-link:hover {
   }
 }
 
+div.navigation a {
+  color: #934e61;
+  font-size: 20px;
+  text-decoration: none;
+}
+div.container div.navigation a:hover{
+  color:pink;
+  background-color:white;
+}
+
+a.fc-event {
+  background-color:lightgreen;
+}
+a.fc-event:hover{
+  background-color:white;
+
+}
 
 .footer
 {
   background-color:green;
   font-size:20px;
   color:#ffffff;
-  padding:20px;
+  padding:13px;
+  // ****************
+  // position:fixed;
+  // bottom:0px;
+  // width:90%;
+  // height:1px;
+  // ****************
+
 }

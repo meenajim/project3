@@ -13,38 +13,33 @@
 
 <p id="notice"><%= notice %></p>
 
-<h2><%= link_to 'Todays Mealplan', new_mealplan_path,:class => 'badge badge-warning' %></h2>
+<h2><%= link_to "Today's meal plan", new_mealplan_path,:class => 'badge badge-warning' %></h2>
 
 <div id="calendar">
 </div>
 <p></p>
 <p></p>
-<table id="mealplans" class = "table">
+<table id="mealplans" class = "table table-bordered">
   <thead>
     <% @servingguide.each do |servingguide| %>
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
+          <th colspan = "2" rowspan = "2">Recommended daily serving size</th>
           <td>Veg</td>
           <td>Fruit</td>
           <td>Grain</td>
           <td>Meat</td>
           <td>Milk</td>
-          <td>AddlServe</td>
-          <td colspan = "1"></td>
+          <td colspan = "2">AddlServe</td>
+          <!-- <td colspan = "1"></td> -->
         </tr>
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
           <td><%= servingguide.veg %></td>
           <td id="Fruit"><%= servingguide.fruit %></td>
           <td id="Grain"><%= servingguide.grain %></td>
           <td id="Meat"><%= servingguide.meat %></td>
           <td id="Milk"><%= servingguide.milk %></td>
-          <td id="AddlServe"><%= servingguide.additional_serve %></td>
-          <td></td>
+          <td id="AddlServe" colspan = "2"><%= servingguide.additional_serve %></td>
+          <!-- <td></td> -->
         </tr>
       <% end %>
         <tr>
@@ -56,7 +51,7 @@
           <th>Meat</th>
           <th>Milk</th>
           <th>Additional serve</th>
-          <th></th>
+          <th>Chart</th>
         </tr>
     </thead>
     <tbody>
@@ -71,8 +66,10 @@
           <td><%= mealplan.milk %></td>
           <td><%= mealplan.additional_serve %></td>
           <td><%= link_to 'View Graph', mealplanshowbydate_path(mealplan.date),:class => 'badge badge-warning graph'%></td>
+        </tr>
       <% end %>
 
     </tbody>
 </table>
+<br>
 <% end %>

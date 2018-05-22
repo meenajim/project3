@@ -24,7 +24,8 @@ class MealplansController < ApplicationController
       @mealplan.update_attributes(mealplan_params(id))
     end
   # Mealplan.update_all({veg: 4},{id: params[:id]})
-  redirect_to(mealplans_url)
+  # redirect_to(mealplans_url)
+  redirect_to(new_mealplan_path)
   end
 
   def show
@@ -51,12 +52,19 @@ class MealplansController < ApplicationController
   if Mealplan.where("user_id = ? and date = ?",  @current_user.id ,Date.today).present?
       @mealplans = Mealplan.where("user_id = ? and date = ?",  @current_user.id ,Date.today)
   else
-    Mealplan.create :user_id => @current_user.id, :date => Date.today , :mealtype => 'Breakfast'
-    Mealplan.create :user_id => @current_user.id, :date => Date.today , :mealtype => 'Lunch'
-    Mealplan.create :user_id => @current_user.id, :date => Date.today , :mealtype => 'Snack'
-    Mealplan.create :user_id => @current_user.id, :date => Date.today , :mealtype => 'Dinner'
-    @mealplans = Mealplan.where("user_id = ? and date = ?",  @current_user.id ,Date.today)
+      Mealplan.create :user_id => @current_user.id, :date => Date.today , :mealtype => 'Breakfast'
+      Mealplan.create :user_id => @current_user.id, :date => Date.today , :mealtype => 'Lunch'
+      Mealplan.create :user_id => @current_user.id, :date => Date.today , :mealtype => 'Snack'
+      Mealplan.create :user_id => @current_user.id, :date => Date.today , :mealtype => 'Dinner'
+      @mealplans = Mealplan.where("user_id = ? and date = ?",  @current_user.id ,Date.today)
   end
+  @vegtotal = Mealplan.where("user_id = ? and date = ?",  @current_user.id ,Date.today).sum(:veg)
+  @fruittotal = Mealplan.where("user_id = ? and date = ?",  @current_user.id ,Date.today).sum(:fruit)
+  @graintotal = Mealplan.where("user_id = ? and date = ?",  @current_user.id ,Date.today).sum(:grain)
+  @meattotal = Mealplan.where("user_id = ? and date = ?",  @current_user.id ,Date.today).sum(:meat)
+  @milktotal = Mealplan.where("user_id = ? and date = ?",  @current_user.id ,Date.today).sum(:milk)
+  @addltotal = Mealplan.where("user_id = ? and date = ?",  @current_user.id ,Date.today).sum(:additional_serve)
+
     # ******************************
   end
 
