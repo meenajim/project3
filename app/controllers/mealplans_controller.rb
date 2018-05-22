@@ -58,12 +58,12 @@ class MealplansController < ApplicationController
       Mealplan.create :user_id => @current_user.id, :date => Date.today , :mealtype => 'Dinner'
       @mealplans = Mealplan.where("user_id = ? and date = ?",  @current_user.id ,Date.today)
   end
-  @vegtotal = Mealplan.where("user_id = ? and date = ?",  @current_user.id ,Date.today).sum(:veg)
-  @fruittotal = Mealplan.where("user_id = ? and date = ?",  @current_user.id ,Date.today).sum(:fruit)
-  @graintotal = Mealplan.where("user_id = ? and date = ?",  @current_user.id ,Date.today).sum(:grain)
-  @meattotal = Mealplan.where("user_id = ? and date = ?",  @current_user.id ,Date.today).sum(:meat)
-  @milktotal = Mealplan.where("user_id = ? and date = ?",  @current_user.id ,Date.today).sum(:milk)
-  @addltotal = Mealplan.where("user_id = ? and date = ?",  @current_user.id ,Date.today).sum(:additional_serve)
+  # @vegtotal = Mealplan.where("user_id = ? and date = ?",  @current_user.id ,Date.today).sum(:veg)
+  # @fruittotal = Mealplan.where("user_id = ? and date = ?",  @current_user.id ,Date.today).sum(:fruit)
+  # @graintotal = Mealplan.where("user_id = ? and date = ?",  @current_user.id ,Date.today).sum(:grain)
+  # @meattotal = Mealplan.where("user_id = ? and date = ?",  @current_user.id ,Date.today).sum(:meat)
+  # @milktotal = Mealplan.where("user_id = ? and date = ?",  @current_user.id ,Date.today).sum(:milk)
+  # @addltotal = Mealplan.where("user_id = ? and date = ?",  @current_user.id ,Date.today).sum(:additional_serve)
 
     # ******************************
   end
