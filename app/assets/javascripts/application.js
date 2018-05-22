@@ -18,4 +18,6 @@
 //= require data
 //= require exporting
 //= require export-data
+//= require popper
+//= require bootstrap-sprockets
 //= require_tree .

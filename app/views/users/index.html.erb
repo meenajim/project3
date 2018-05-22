@@ -3,7 +3,7 @@
 
 <h1>Users</h1>
 
-<table>
+<table class = "indexlayout">
   <thead>
     <tr>
       <th style="width:10%">Name</th>
@@ -25,9 +25,10 @@
         <td style="width:10%"><%= user.dob %></td>
         <td style="width:10%"><%= user.email %></td>
         <td style="width:10%"><%= user.family_id %></td>
-        <td style="width:10%"><%= link_to 'Show', user %></td>
-        <td style="width:10%"><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td style="width:10%"><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+        <td style="width:10%"><%= link_to 'Show', user,:class => 'badge badge-warning graph' %></td>
+        <td style="width:10%"><%= link_to 'Edit', edit_user_path(user) ,:class => 'badge badge-warning graph'%></td>
+        <td style="width:10%"><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' },:class => 'badge badge-warning graph' %></td>
       </tr>
     <% end %>
   </tbody>

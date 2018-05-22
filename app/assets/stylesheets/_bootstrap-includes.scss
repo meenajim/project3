@@ -1,7 +1,6 @@
 @import "bootstrap";
 
 
-
 .guidelines{
   border:2px solid grey;
   background-color:#f8fdf8;
@@ -33,6 +32,10 @@
 }
 .familylayout{
   width:30%;
+  border:2px solid black;
+
+}
+.userlayout{
   border:2px solid black;
 
 }
@@ -121,12 +124,12 @@ div.navbar-nav a.nav-item.nav-link:hover {
 #calendar {
   width: 50%;
 }
-// @media only screen and (max-width:438px) {
-//   #calendar {
-//     width: 35%;
-//   }
-// }
-//
+@media only screen and (max-width:890px) {
+  #calendar {
+    width: auto;
+  }
+}
+
 
 .footer
 {
