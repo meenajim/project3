@@ -82,7 +82,7 @@ $('#container2').highcharts({
  * FullCalendar gem for calendar feature
  * Nutrionix API
 
-### JQuery plugin
+### Javascript Library
  * Highcharts.js
 
 ### Complimentary tools:
